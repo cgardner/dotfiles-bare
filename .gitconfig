@@ -1,0 +1,54 @@
+[user]
+  name = Craig Gardner
+  email = craig.s.gardner@gmail.com
+[alias]
+  co   = checkout
+  mrg  = merge --no-ff
+  ms   = merge --squash
+  ci   = commit -v
+  b    = branch
+  cl   = clean -fd
+  diff = diff --ignore-space-at-eol
+
+# Flow {{{
+  ffs = flow feature start
+  fff = flow feature finish
+  frs = flow release start
+  frf = flow release finish
+# }}}
+
+# Found these from https://github.com/gabebw/dotfiles/blob/master/gitconfig.erb
+  st       = status -sb
+  lol      = log --graph --all --pretty=format:'%Cred%h%Creset %Cblue%an%Creset: %s -%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+  a        = add -p
+  up       = !git fetch upstream && git pull --rebase upstream master
+  update   = !git fetch && git pull --rebase
+  bd       = branch -d
+  news     = log -p HEAD@{1}..HEAD@{0}
+  pt       = !git tag -l | xargs git tag -d && git fetch -t
+[color]
+  ui = auto
+[core]
+  quotepath    = false
+  whitespace   = cr-at-eol
+  editor       = nvim
+  autocrlf     = input
+[diff]
+  algorithm = patience
+[push]
+  default = simple
+[fetch]
+  recurseSubmodules = false
+  prune             = true
+[url "ssh://git@"]
+  insteadOf = git://
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg
+[credential]
+	helper = "!gopass git-credential $@"
