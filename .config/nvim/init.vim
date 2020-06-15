@@ -1,3 +1,4 @@
+" vim:foldmethod=marker
 set nocompatible
 
 " Plugins {{{
@@ -208,6 +209,10 @@ nnoremap ]Q :clast<CR>
 
 " NERDTree {{{
 map <leader>n :NERDTreeToggle<CR>
+" }}}
+
+" Clap {{{
+nnoremap <C-p> :Clap files ++finder=fd --type f --exclude node_modules .<CR>
 " }}}
 
 " }}}
