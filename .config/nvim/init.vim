@@ -259,6 +259,10 @@ endfunction
 " }}}
 " }}}
 
+" Snippets {{{
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snippets']
+" }}}
+
 " Markdown Preview {{{
 let g:mkdp_preview_options = {
 \   'uml': {
