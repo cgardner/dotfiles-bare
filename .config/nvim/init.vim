@@ -35,10 +35,15 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 " Markdown {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'masukomi/vim-markdown-folding'
 " }}}
 
 " Ledger {{{
 Plug 'ledger/vim-ledger'
+" }}}
+
+" Utilities {{{
+Plug 'godlygeek/tabular'
 " }}}
 
 call plug#end()
