@@ -1,0 +1,10 @@
+snippet entry "Ledger Journal Entry" 
+`!v strftime("%Y/%m/%d")` ${1:transaction}
+	Assets:${2:Asset Account}    -${3:0.00} ${4:USD}
+	Expenses:${5:Expense Account}  $3 $4
+${0}
+endsnippet
+
+snippet i "Timelog Entry"
+${1:i} `!v strftime("%Y/%m/%d %H:%M:%S")` ${1:PROJECT:NAME} ${2:payee}
+endsnippet
