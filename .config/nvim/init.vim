@@ -205,6 +205,8 @@ let g:ale_fixers.javascript = ['eslint']
 
 " UltiSnips {{{
 " let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snippets']
+let g:snips_author="Craig Gardner"
+let g:snips_email="craig.gardner@cdk.com"
 " }}}
 
 " Markdown Preview {{{

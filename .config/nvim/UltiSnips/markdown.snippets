@@ -7,3 +7,56 @@ ${0:diagram}
 @enduml
 \`\`\`
 endsnippet
+
+snippet gherkin "Create a new Gherkin Snippet" b
+\`\`\`gherkin
+Scenario: ${1:Scenario Description}
+Given ${2:a scenario is set up}
+When ${3:the scenario gets executed}
+Then ${4:the expected results of the scenario}
+${5:And something else that the scenario supports}
+\`\`\`
+endsnippet
+
+snippet tproject "Project Plan Template" b
+author: `!v g:snips_author`
+created: `!v strftime("%Y-%m-%d")`
+
+---
+
+# ${1:Project Name}
+
+${2:Project Description}
+
+## Goal
+
+${3:Ultimate Goal}
+
+### Success Criteria
+
+${4:Success BDD}
+
+## Team
+
+- [`!v g:snips_author`](`!v g:snips_email`)
+
+## Milestones
+
+\`\`\`plantuml
+@startgantt
+
+project starts the `!v strftime("%Y-%m-%d")`
+
+saturday are closed
+sunday are closed
+
+[Whole Project] lasts 45 days
+@endgantt
+\`\`\`
+
+## Resources
+
+- ${5:[${6:Resource Description}](${7:https://resource.url/path})}
+
+[1]: https://plantuml.com/gantt-diagram "Gantt Diagram Reference"
+endsnippet
