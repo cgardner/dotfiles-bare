@@ -52,3 +52,5 @@
   program = gpg
 [credential]
 	helper = "!gopass git-credential $@"
+[pull]
+	rebase = true
