@@ -4,6 +4,7 @@ PATHS=(
   "./node_modules/.bin"
   "${HOME}/go/bin"
   "${HOME}/.cargo/bin"
+  "${HOME}/.joplin-bin/bin/"
   "${HOME}/Library/Python/3.7/bin/"
   "/usr/local/opt/openjdk/bin/"
 )
