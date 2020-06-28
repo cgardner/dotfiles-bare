@@ -33,6 +33,7 @@
 [color]
   ui = auto
 [core]
+  excludesfile = ~/.dotfiles/git/gitignore
   quotepath    = false
   whitespace   = cr-at-eol
   editor       = nvim
@@ -41,12 +42,15 @@
   algorithm = patience
 [push]
   default = simple
+[init]
+  templatedir = ~/.dotfiles/git/template
 [fetch]
   recurseSubmodules = false
   prune             = true
 [url "ssh://git@"]
   insteadOf = git://
 [commit]
+  template = ~/.dotfiles/git/commit-template
   gpgsign = true
 [gpg]
   program = gpg
