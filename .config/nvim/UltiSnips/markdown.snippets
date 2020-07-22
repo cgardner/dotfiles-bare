@@ -2,8 +2,11 @@ snippet plantuml "Create a PlantUML Diagram" b
 \`\`\`plantuml
 @startuml
 
+title ${1:Diagram Name}
+
 ${0:diagram}
 
+'
 @enduml
 \`\`\`
 endsnippet
@@ -59,4 +62,49 @@ sunday are closed
 - ${5:[${6:Resource Description}](${7:https://resource.url/path})}
 
 [1]: https://plantuml.com/gantt-diagram "Gantt Diagram Reference"
+endsnippet
+
+snippet gtask "Gantt Chart Task"
+[${1:Task Description}] ${2:Lasts ${3:15} days}
+endsnippet
+
+snippet gtaskaf "Gantt Task After Other"
+[${1:Task Description}] ${2:Lasts ${3:15} days}
+[$1] starts at [${4:Previous Task}]'s end
+endsnippet
+
+snippet gmile "Gantt Milestone"
+[${1:Milestone Name}] happens at [${2:Criteria}]'s end
+endsnippet
+
+snippet skinparam "Skin Paramters"
+skinparam ${1:component} {
+  FontSize 12
+  FontName Roboto
+  FontColor white
+  ArrowColor #A7A8AA
+  BorderColor white
+  StartColor #509E2F
+  EndColor #509E2F
+  BackgroundColor #82C600
+}
+$0
+endsnippet
+
+snippet tinterview "Interview Feedback Template"
+
+**Candidate Name**: ${1:Candidate Name}
+
+**Date of Interview**: `!v strftime("%Y-%m-%d")`
+
+**Interviewer Name**: `!v g:snips_author`
+
+**Interview**: ${2:Phone or On-site}
+
+**Overall Recommendation**: ${3:Move Forward or Not}
+
+#### Feedback on Technical Competencies
+
+${4:Feedback Goes Here}
+
 endsnippet
