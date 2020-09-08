@@ -44,6 +44,11 @@ Plug 'ledger/vim-ledger'
 
 " Utilities {{{
 Plug 'godlygeek/tabular'
+Plug 'mattn/emmet-vim'
+" }}}
+
+" APM {{{
+Plug 'ThePrimeagen/vim-apm'
 " }}}
 
 call plug#end()
