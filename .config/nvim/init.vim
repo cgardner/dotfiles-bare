@@ -81,6 +81,10 @@ syntax enable
 set clipboard=unnamedplus " MacOS
 " }}}
 
+" Wrapping {{{
+set textwidth=80
+" }}}
+
 " Colemak {{{
 noremap K J
 noremap J K
