@@ -33,7 +33,6 @@ function load_dir() {
   done
 }
 
-load_dir $ZSH_ROOT/config
 
 source <(antibody init)
 antibody bundle < $ZSH_ROOT/zsh_plugins.txt
@@ -45,6 +44,7 @@ export EDITOR='nvim'
 
 compinit
 
+load_dir $ZSH_ROOT/config
 load_source $ZSH_ROOT/keybindings.sh
 load_source $ZSH_ROOT/node.sh
 

@@ -53,3 +53,11 @@ realpath() {
     [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
 }
 # }}}
+
+# Utilities {{{
+get_recipe()
+{
+  curl -sG "https://plainoldrecipe.com/recipe" -d "url=${1}" | \
+    pandoc -f html -t markdown --atx-headers
+}
+# }}}

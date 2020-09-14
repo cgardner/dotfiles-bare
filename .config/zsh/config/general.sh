@@ -1,3 +1,4 @@
+# vim: fdm=marker
 alias zref="source $HOME/.zshrc"
 
 # upgrayedd {{{

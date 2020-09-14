@@ -8,6 +8,13 @@ export INCOME_LOG="$LEDGER_ROOT/income.ledger"
 # }}}
 
 # Functions {{{
+function ledger_monthly_balance() {
+  local config_file=$1
+  local start=$2
+  local end=$3
+  ledger -f $config_file balance -b $start -e $end
+}
+
 function ledgerfunc () {
   local config_file="$1"; shift
   local action=$1
@@ -21,14 +28,29 @@ function ledgerfunc () {
       local entry_name=$1
       ledger -f $config_file entry $entry_name >> $config_file && $EDITOR $config_file
       ;;
-    "start" | "finish")
+    "cur" | "current")
+      local start=$(date +%Y-%m-01)
+      local end=$(date -v +1d +%Y-%m-%d)
+      ledger_monthly_balance $config_file $start $end
+      ;;
+    "prev" | "previous")
+      local this_month=$(date +%Y-%m-01)
+      local start=$(date -j -f "%Y-%m-%d" -v -1m "$this_month" "+%Y-%m-%d")
+      local end=$(date -j -f "%Y-%m-%d" -v -1d "$this_month" "+%Y-%m-%d")
+      ledger_monthly_balance $config_file $start $end
+      ;;
+    "start" | "finish" | "end")
       shift
       local in_out="i";
-      if [[ "$action" == "finish" ]]; then
+      if [[ "$action" == "finish" || "$action" == "end" ]]; then
         in_out="o"
       fi
       # start a time log
       echo "$in_out $(date +"%Y/%m/%d %H:%M:%S") $@" >> $config_file
+      ;;
+    "bal")
+      shift
+      ledger -f $config_file balance -C
       ;;
     *)
       ledger -f $config_file $@
