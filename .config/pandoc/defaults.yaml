@@ -1,0 +1,10 @@
+include-in-header: [ "/Users/gardnerc/src/work-notes/markdown/github-embed.html" ]
+highlight-style: haddock
+pdf-engine: wkhtmltopdf
+
+from: markdown_mmd
+# to: ms
+
+
+
+
