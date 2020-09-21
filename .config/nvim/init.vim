@@ -158,7 +158,6 @@ let g:lightline = {
     \ "filetype": "MyFiletype",
     \ "fileformat": "MyFileformat",
   \ },
-  \ "colorscheme": "solarized",
   \ "mode_map": {
     \ "n" : "N",
     \ "i" : "I",
