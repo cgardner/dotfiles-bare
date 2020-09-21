@@ -218,11 +218,16 @@ let g:ale_sign_warning = '⚠️'
 let g:ale_linters = {}
 
 let g:ale_linters.javascript = ['eslint']
+let g:ale_linters.java = ['checkstyle']
 " }}}
 " Fixers {{{
 let g:ale_fixers = {}
 
 let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.json = ['jq']
+let g:ale_fixers.markdown = ['remove_trailing_lines', 'trim_whitespace']
+
+let g:ale_fixers.go = ['gofmt']
 " }}}
 " }}} 
 
