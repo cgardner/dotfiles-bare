@@ -94,6 +94,10 @@ noremap J K
 noremap h k
 noremap j h
 noremap k j
+
+nnoremap <C-W>h :wincmd k<CR>
+nnoremap <C-W>j :wincmd h<CR>
+nnoremap <C-W>k :wincmd j<CR>
 " }}}
 
 " Disable backup files {{{
