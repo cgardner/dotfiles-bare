@@ -115,6 +115,10 @@ set undolevels=1000
 set incsearch
 " }}}
 
+" Keep the cursor centered {{{
+set scrolloff=999
+" }}}
+
 " }}}
 
 " Helpers {{{
