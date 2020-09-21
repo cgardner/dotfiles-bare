@@ -71,6 +71,7 @@ set expandtab
 
 set title
 set number
+set relativenumber
 set guifont=FiraCode\ Nerd\ Font
 
 syntax enable
@@ -131,6 +132,10 @@ nnoremap ; :
 
 " Stop highlighting search terms {{{
 noremap <silent><Leader>/ :nohls<CR>
+" }}}
+
+" Toggle Relative Line Numbers {{{
+map <leader>rn :set rnu!<cr>
 " }}}
 " }}}
 
