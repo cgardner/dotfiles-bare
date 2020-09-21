@@ -4,7 +4,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Colors {{{
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 " }}}
 
 " File Browser {{{
@@ -56,7 +56,7 @@ call plug#end()
 
 " Look and Feel {{{
 " Color Scheme {{{
-colorscheme solarized
+colorscheme gruvbox
 set background=dark
 " }}}
 
