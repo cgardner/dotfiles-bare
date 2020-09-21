@@ -1,0 +1,74 @@
+add_newline = false
+scan_timeout = 10
+prompt_order = [
+    "username",
+    "hostname",
+    # "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    # "hg_branch",
+    # "docker_context",
+    # "package",
+    # "dotnet",
+    # "elixir",
+    # "elm",
+    # "erlang",
+    "golang",
+    # "haskell",
+    "java",
+    # "julia",
+    "nodejs",
+    # "ocaml",
+    # "php",
+    # "purescript",
+    # "python",
+    # "ruby",
+    "rust",
+    # "terraform",
+    # "zig",
+    # "nix_shell",
+    # "conda",
+    "memory_usage",
+    # "aws",
+    # "env_var",
+    # "crystal",
+    # "cmd_duration",
+    # "custom",
+    "line_break",
+    # "jobs",
+    "battery",
+    "time",
+    "character",
+]
+
+[battery]
+  full_symbol = "🔋"
+  charging_symbol = "⚡️"
+  discharging_symbol = "💀"
+
+[[battery.display]]
+threshold = 99
+
+[time]
+  disabled = false
+
+[git_branch]
+  prefix = "hello "
+  symbol = " "
+
+[git_status]
+  staged_count.enabled = true
+  deleted_count.enabled = true
+  renamed_count.enabled = true
+  modified_count.enabled = true
+  show_sync_count = true
+
+[java]
+  prefix = ""
+[directory]
+  prefix = ""
+[golang]
+  prefix = "ﳑ"
