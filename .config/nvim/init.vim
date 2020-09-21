@@ -36,6 +36,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " Markdown {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'masukomi/vim-markdown-folding'
+Plug 'reedes/vim-lexical', {'for': ['markdown']}
 " }}}
 
 " Ledger {{{
@@ -222,7 +223,13 @@ let g:snips_email="craig.gardner@cdk.com"
 let g:mkdp_preview_options = {
 \   'uml': {
 \     'server': 'http://localhost:8080',
-\     'imageFormat': 'svg'
+\     'imageFormat': 'png'
 \   }
 \ }
+" }}}
+
+" vim-lexical {{{
+let g:lexical#thesaurus = ['~/.config/nvim/thesaurus/mthesaur.txt',]
+let g:lexical#dictionary = ['/usr/share/dict/words',]
+let g:lexical#spellfile = ['~/.config/nvim/spell/en.utf-8.add',]
 " }}}
