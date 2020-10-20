@@ -15,13 +15,15 @@ function remindfunc () {
   local config_file="$1"; shift
   local action=$1
 
+  local flags=""
+
   local remind=$(which remind)
   case $action in
     "month")
-      $remind -c $config_file
+      $remind $flags -c $config_file
       ;;
     "week")
-      $remind -ca+1 $config_file
+      $remind $flags -ca+1 $config_file
       ;;
     "agenda")
       echo "TBD"
@@ -30,7 +32,7 @@ function remindfunc () {
       $EDITOR $config_file
       ;;
     *)
-      $remind $@ $config_file
+      $remind $flags $@ $config_file
       ;;
   esac
 }
