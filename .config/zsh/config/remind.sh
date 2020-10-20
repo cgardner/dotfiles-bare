@@ -42,4 +42,5 @@ alias ,rw="remindfunc $WORK_REMIND"
 alias ,rh="remindfunc $HOME_REMIND"
 alias ,ra="remindfunc $ALL_REMIND"
 alias ,rhol="remindfunc $HOLIDAY_REMIND"
+alias ,re="$EDITOR $0 && source $0" # Edit this file
 # }}}
