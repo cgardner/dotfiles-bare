@@ -18,7 +18,7 @@
 # }}}
 
 # Found these from https://github.com/gabebw/dotfiles/blob/master/gitconfig.erb
-  st       = status -sb
+  st       = status -sbuno
   lol      = log --graph --all --pretty=format:'%Cred%h%Creset %Cblue%an%Creset: %s -%Creset%C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   assume   = update-index --assume-unchanged
   unassume = update-index --no-assume-unchanged
