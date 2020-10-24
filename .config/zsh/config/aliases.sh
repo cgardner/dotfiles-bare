@@ -1,9 +1,8 @@
 # vim: foldmethod=marker
 # upgrayedd {{{
-alias upgrayedd='brew upgrade && \
-  brew cask upgrade && \
-  brew cleanup && \
-  nvim -c "PlugUpdate" -c "PlugUpgrade" -c "PlugClean" -c "qa!" && \
+alias upgrayedd='brew upgrade; \
+  brew cleanup ; \
+  nvim -c "PlugUpdate" -c "PlugUpgrade" -c "PlugClean" -c "qa!" ; \
   npm-check -y -g' 
 # }}}
 
@@ -45,6 +44,8 @@ md() {
 
 alias zref="source $HOME/.zshrc"
 alias ,zr="zref"
+alias ,ze="$EDITOR $HOME/.config/zsh/zshrc.sh && source $HOME/.config/zsh/zshrc.sh"
+
 mdown() {
   pandoc "$1" | w3m -T text/html
 }
@@ -59,5 +60,9 @@ get_recipe()
 {
   curl -sG "https://plainoldrecipe.com/recipe" -d "url=${1}" | \
     pandoc -f html -t markdown --atx-headers
+}
+
+ytdl() {
+  youtube-dl -f best -o '~/Downloads/Videos/%(title)s.%(ext)s' "${1}"
 }
 # }}}
