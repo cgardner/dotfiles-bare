@@ -12,14 +12,14 @@ root: ~/
 # Project hooks
 # Runs on project start, always
 # on_project_start: command
-on_project_start: docker run -d --rm --name=plantuml -p 8080:8080 plantuml/plantuml-server
+# on_project_start: docker run -d --rm --name=plantuml -p 8080:8080 plantuml/plantuml-server
 # Run on project start, the first time
 # on_project_first_start: command
 # Run on project start, after the first time
 # on_project_restart: command
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
-on_project_exit: docker kill plantuml
+# on_project_exit: docker kill plantuml
 # Run on project stop
 # on_project_stop: command
 
@@ -47,9 +47,8 @@ windows:
       # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
       # synchronize: after
       panes:
-        - tasksh
+        - dstask
   - wiki:
-      root: ~/.vimwiki
       panes: 
         - joplin
   - terminal:
