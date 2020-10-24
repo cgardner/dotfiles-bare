@@ -1,6 +1,7 @@
 ZSH_ROOT="$HOME/.config/zsh"
 ZSH_PLUGIN_DIR="$ZSH_ROOT/plugins"
 GPG_TTY=$(tty)
+TERM="screen-256color"
 
 function load_source() {
   DEBUG=$2
