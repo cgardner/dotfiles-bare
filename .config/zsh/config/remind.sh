@@ -15,12 +15,13 @@ function remindfunc () {
   local config_file="$1"; shift
   local action=$1
 
-  local flags=""
+  local flags="-gaa"
 
   local remind=$(which remind)
   case $action in
     "month")
-      $remind $flags -c $config_file
+      local num_months=${2:-1}
+      $remind $flags -c${num_months} $config_file
       ;;
     "week")
       $remind $flags -ca+1 $config_file
@@ -43,4 +44,5 @@ alias ,rh="remindfunc $HOME_REMIND"
 alias ,ra="remindfunc $ALL_REMIND"
 alias ,rhol="remindfunc $HOLIDAY_REMIND"
 alias ,re="$EDITOR $0 && source $0" # Edit this file
+alias ,rg="git --git-dir=$REMIND_ROOT/.git --work-tree=$REMIND_ROOT"
 # }}}
