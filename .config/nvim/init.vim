@@ -15,6 +15,7 @@ Plug 'ryanoasis/vim-devicons'
 " Tim Pope {{{
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 " }}}
 
 " Lightline {{{
@@ -222,7 +223,7 @@ let g:ale_linters.java = ['checkstyle']
 " Fixers {{{
 let g:ale_fixers = {}
 
-let g:ale_fixers.javascript = ['eslint']
+let g:ale_fixers.javascript = ['eslint', 'prettier']
 let g:ale_fixers.json = ['jq']
 let g:ale_fixers.markdown = ['remove_trailing_lines', 'trim_whitespace']
 
@@ -239,7 +240,6 @@ let g:snips_email="craig.gardner@cdk.com"
 " Markdown Preview {{{
 let g:mkdp_preview_options = {
 \   'uml': {
-\     'server': 'http://localhost:8080',
 \     'imageFormat': 'png'
 \   }
 \ }
