@@ -16,3 +16,9 @@ zle -N git_prepare
 bindkey "^g" git_prepare
 
 bindkey '^r' history-incremental-search-backward      # [Ctrl-r] - Search backward incrementally for a specified string. The string may begin with ^ to anchor the search to the beginning of the line.
+
+bindkey -a j backward-char
+bindkey -a l forward-char
+bindkey -a h down-history
+bindkey -a k up-history
+
