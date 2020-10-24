@@ -1,0 +1,25 @@
+Downloads
+Applications*/
+Desktop/
+Documents/
+Dropbox/
+Google Drive/
+Library/
+Movies/
+Music/
+MyJabberFiles/
+Parallels/
+Pictures/
+Public/
+VirtualBox VMs/
+apm.csv
+budget-tracking.sh
+go/
+perl5/
+plantuml-images/
+src/
+tmp/
+vlc
+.password-store-*
+
+.DS_Store
