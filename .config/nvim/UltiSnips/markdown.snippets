@@ -107,12 +107,53 @@ snippet tinterview "Interview Feedback Template"
 
 ${4:Technical Feedback}
 
+##### Topics Covered
+
+- SOLID Principles
+- Design Patterns
+- ${5:Other Topics}
+
 #### Feedback on Behavioral Competencies
 
-${5:Behavioral Feedback}
+${6:Behavioral Feedback}
 
 #### Areas of concern
 
-${6:Areas of Concern}
+${7:Areas of Concern}
 
+endsnippet
+
+snippet rca "Root Cause Analysis Template"
+Date: `!v strftime("%Y-%m-%d")`
+Outage Duration: ${1:1 hour}
+
+## Event Description
+
+${2: Description of what happened goes here}
+
+## Chronology of Events / Timeline
+
+- `!v strftime("%H:%M")` PT - Created RCA
+
+## Investigative Team
+
+| Team | Representative | Notes |
+| --- | --- | --- |
+| Accounting | | |
+| OEMI | | |
+| Common Core | | |
+| OEMI | | |
+| Parts | | |
+| Platform | | |
+| QA | | |
+| Sales | | |
+| Service | | |
+
+## Findings and Root Cause
+
+${3: Root Cause Findings}
+
+## Corrective Actions
+
+- [ ] ${4: First action item to prevent this from happening again}
 endsnippet

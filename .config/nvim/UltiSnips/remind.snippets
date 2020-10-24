@@ -1,0 +1,9 @@
+snippet rem "New Reminder"
+REM ${1:`!v strftime('%b %d %Y')`} ${2:AT ${3:`!v strftime("%H:%M%p")`}}${4: REPEAT} ${5:DURATION ${6:30}}${7: TAG ${8:tag}} MSG %2 - %"${9:description}%"
+endsnippet
+
+snippet today "Start Today's Agenda"
+# `!v strftime("%Y-%m-%d")` {{{
+$0
+# }}}
+endsnippet
