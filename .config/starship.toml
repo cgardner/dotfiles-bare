@@ -20,30 +20,32 @@ format = """\
 """
 
 [battery]
-  full_symbol = "🔋"
-  charging_symbol = "⚡️"
-  discharging_symbol = "💀"
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
 
 [[battery.display]]
 threshold = 99
 
 [time]
-  disabled = false
+disabled = false
 
 [git_branch]
-  symbol = " "
+symbol = " "
 
 [git_status]
-  staged_count.enabled = true
-  deleted_count.enabled = true
-  renamed_count.enabled = true
-  modified_count.enabled = true
-  show_sync_count = true
+staged_count.enabled = true
+deleted_count.enabled = true
+renamed_count.enabled = true
+modified_count.enabled = true
+show_sync_count = true
 
 [java]
-  format = ""
+format = ""
 
 [directory]
-  format = ""
+format = ""
+
 [golang]
-  symbol = "ﳑ"
+symbol = "ﳑ"
+
