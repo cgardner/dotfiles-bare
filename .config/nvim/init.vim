@@ -18,6 +18,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " }}}
 
+" Syntax {{{
+Plug 'sheerun/vim-polyglot'
+" }}}
+
 " Lightline {{{
 Plug 'itchyny/lightline.vim'
 " }}}
