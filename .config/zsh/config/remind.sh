@@ -1,7 +1,8 @@
 # vim: foldmethod=marker
 # Links {{{
-# Wiki - https://www.roaringpenguin.com/wiki/index.php
+# Wiki - https://www.roaringpenguin.com/wiki/index.php/Remind
 # Man Pages - https://linux.die.net/man/1/remind
+# Helpful Blog Post - https://blog.thechases.com/posts/remind/
 # }}}
 # Variables {{{
 export REMIND_ROOT="$HOME/.config/remind"
