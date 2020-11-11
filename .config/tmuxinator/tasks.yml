@@ -50,7 +50,7 @@ windows:
         - dstask
   - wiki:
       panes: 
-        - joplin
+        - npx joplin
   - terminal:
       panes:
         - 
