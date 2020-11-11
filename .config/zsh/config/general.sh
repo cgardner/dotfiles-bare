@@ -1,31 +1,31 @@
 # vim: fdm=marker
-alias zref="source $HOME/.zshrc"
-
+# Zshrc {{{
+alias zref="source $home/.zshrc"
+alias ,zr="zref"
+alias ,ze="$editor $home/.config/zsh/zshrc.sh && source $home/.config/zsh/zshrc.sh"
+# }}}
 # upgrayedd {{{
-alias upgrayedd='brew upgrade && \
-  brew cask upgrade && \
-  brew cleanup && \
-  nvim -c "PlugUpdate" -c "PlugUpgrade" -c "PlugClean" -c "qa!" && \
+alias upgrayedd='HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade --greedy; \
+  brew cleanup ; \
+  nvim -c "PlugUpdate" -c "PlugUpgrade" -c "PlugClean" -c "qa!" ; \
   npm-check -y -g' 
 # }}}
-
 # tmuxinator {{{
-alias mux="tmuxinator"
+alias ,mux="mux"
 alias muxs="tmuxinator start"
+alias ,muxs="muxs"
 alias p="tmuxinator start project"
-alias dp="tmuxinator start project "
-# }}}
-
-# tmux {{{
-alias tmk="tmux kill-session -t "
-
+alias ,p="p"
 alias goproj="tmuxinator start go-project"
 # }}}
-
+# tmux {{{
+alias tmk="tmux kill-session -t "
+alias ,tmx="tmk"
+alias ,tml="tmux list-session"
+# }}}
 # gopass {{{
 alias ,gp="gopass show -c "
 # }}}
-
 # git {{{
 alias g="git"
 
@@ -35,12 +35,19 @@ clone() {
   git clone $REPO_URL
   popd
 }
-# }}}
 
-alias tf="terraform"
+gupdate() {
+  git fetch origin
+  git checkout develop
+  git pull origin develop
+  git checkout master
+  git pull origin master
+}
+# }}}
 
 alias pl="ls $HOME/src"
 
+# Helpers {{{
 md() {
   mkdir -p $1
   cd $1
@@ -60,3 +67,13 @@ realpath() {
     [[ $1 = /* ]] && echo "$1" || echo "$PWD/${1#./}"
 }
 
+get_recipe()
+{
+  curl -sG "https://plainoldrecipe.com/recipe" -d "url=${1}" | \
+    pandoc -f html -t markdown --atx-headers
+}
+
+ytdl() {
+  youtube-dl -f best -o '~/Downloads/Videos/%(title)s.%(ext)s' "${1}"
+}
+# }}}
