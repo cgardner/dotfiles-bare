@@ -56,6 +56,9 @@ Plug 'mattn/emmet-vim'
 " APM {{{
 Plug 'ThePrimeagen/vim-apm'
 " }}}
+" External Plugins {{{
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
+" }}}
 
 call plug#end()
 " }}}
