@@ -19,6 +19,7 @@ function remind () {
   local action=$1
 
   local flags=("-gaadd" "-q" "-iCOLOR=1")
+  local git_flags=("--git-dir=$REMIND_ROOT/.git" "--work-tree=$REMIND_ROOT")
 
   if [ ${REMIND_DEBUG:-0} -ne 0 ]; then
     echo "Setting verbose flag"
@@ -49,9 +50,12 @@ function remind () {
     "edit")
       $EDITOR $config_file
       ;;
+    "g" | "git")
+      shift
+      command git $git_flags $@
+      ;;
     "ci" | "commit")
       shift
-      local git_flags=$("--git-dir=$REMIND_ROOT/.git" "--work-tree=$REMIND_ROOT")
       command git $git_flags add $config_file
       command git $git_flags commit $@
       ;;
@@ -69,5 +73,5 @@ alias ,ro="remind $ORGANIZE_REMIND"
 alias ,rhol="remind $HOLIDAY_REMIND"
 alias ,rrel="remind $RELEASE_REMIND"
 alias ,re="$EDITOR $0 && source $0" # Edit this file
-alias ,rg="git --git-dir=$REMIND_ROOT/.git --work-tree=$REMIND_ROOT"
+alias ,rg="remind git"
 # }}}
