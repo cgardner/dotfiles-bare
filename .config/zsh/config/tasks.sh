@@ -1,7 +1,37 @@
 # vim: foldmethod=marker
+# Functions {{{
+function dstask() {
+  local action="$1"
+  case $action in
+    "jira")
+      shift;
 
+      local JIRA_PROJECT="FLEXPLAT"
+
+      # local tasks=$(command dstask $@ | jq -r '.[]') 
+      local stories=()
+      for id in ${@}; do
+        local summary=$(command dstask $id | jq -r '.[0].summary | tostring')
+        local notes=$(command dstask $id | jq -r '.[0].notes | tostring')
+
+        local story=$(jira create -p $JIRA_PROJECT -i 'Story' \
+          --override reporter=$(whoami) --override summary="${summary}" \
+          --override description="${notes}" | awk '{ print $3 }')
+        stories+=($story)
+      done
+      command dstask $@ done
+      echo $stories
+
+      ;;
+
+    *)
+      command dstask $@
+      ;;
+  esac
+}
+# }}}
 # Aliases {{{
-TASK_APP="$(which dstask)"
+TASK_APP="dstask"
 alias t="$TASK_APP"
 alias ,t="$TASK_APP"
 alias ,tin="$TASK_APP show-unorganised"
