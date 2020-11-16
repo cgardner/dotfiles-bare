@@ -46,8 +46,8 @@ function dstask() {
 # }}}
 # Aliases {{{
 TASK_APP="dstask"
-alias t="$TASK_APP"
 alias ,t="$TASK_APP"
+alias ,ta="$TASK_APP add"
 alias ,tin="$TASK_APP show-unorganised"
 alias ,tp="$TASK_APP show-projects"
 alias ,tw="_task_set_context -someday -growth -personal"
