@@ -22,7 +22,22 @@ function dstask() {
       echo $stories
 
       ;;
+    "interview")
+      command dstask add "${2}" template:65
+      ;;
+    "export" | "ex")
+      shift
+      local id="${1}"
 
+      local summary=$(command dstask $id | jq -r '.[0].summary | tostring')
+      local notes=$(command dstask $id |jq -r '.[0].notes | tostring')
+
+      echo "${notes}" | pandoc --defaults \
+        $HOME/.config/pandoc/defaults.yaml --filter pandoc-plantuml -o \
+        $HOME/Downloads/$summary.docx
+
+      echo "\"$HOME/Downloads/$summary.docx\""
+      ;;
     *)
       command dstask $@
       ;;
