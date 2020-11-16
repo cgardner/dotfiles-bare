@@ -5,16 +5,15 @@ function dstask() {
   case $action in
     "jira")
       shift;
+      JIRA_PROJECT="FLEXPLAT"
 
-      local JIRA_PROJECT="FLEXPLAT"
-
-      # local tasks=$(command dstask $@ | jq -r '.[]') 
       local stories=()
+      echo "Creating stories for $@ in $JIRA_PROJECT"
       for id in ${@}; do
         local summary=$(command dstask $id | jq -r '.[0].summary | tostring')
         local notes=$(command dstask $id | jq -r '.[0].notes | tostring')
 
-        local story=$(jira create -p $JIRA_PROJECT -i 'Story' \
+        local story=$(jira create -p $JIRA_PROJECT -i 'Story' --noedit \
           --override reporter=$(whoami) --override summary="${summary}" \
           --override description="${notes}" | awk '{ print $3 }')
         stories+=($story)
