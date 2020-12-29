@@ -20,8 +20,3 @@
 !$ColorTertiaryOrange = "#ED0B00"
 !$ColorTertiaryYellow = "#FEDB00"
 ' }}}
-
-skinparam node {
-  BackgroundColor<<Primary>> $ColorPrimaryGreen
-  FontColor<<Primary>> $ColorWhite
-}
