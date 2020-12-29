@@ -1,6 +1,6 @@
 ' Color Descriptions found here: https://cdkglobal.frontify.com/document/8#/cdk-global-branding/brand-colors
 ' Primary Colors {{{
-!$PrimaryColor = "#82C600"
+!$Primary = "\#82C600"
 !$Black = "#231F20"
 !$White = "#FFFFFF"
 ' }}}
@@ -21,3 +21,7 @@
 !$TertiaryYellow = "#FEDB00"
 ' }}}
 
+skinparam node {
+  BackgroundColor <<Primary>> $Primary
+  FontColor <<Primary>> $White
+}
