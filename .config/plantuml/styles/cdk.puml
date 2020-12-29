@@ -1,6 +1,6 @@
 ' Color Descriptions found here: https://cdkglobal.frontify.com/document/8#/cdk-global-branding/brand-colors
 ' Primary Colors {{{
-!$ColorPrimary = "\#82C600"
+!$ColorPrimary = "#82C600"
 !$ColorBlack = "#231F20"
 !$ColorWhite = "#FFFFFF"
 ' }}}
