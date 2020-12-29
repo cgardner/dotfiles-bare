@@ -22,6 +22,6 @@
 ' }}}
 
 skinparam node {
-  BackgroundColor <<Primary>> $ColorPrimaryGreen
-  FontColor <<Primary>> $ColorWhite
+  BackgroundColor<<Primary>> $ColorPrimaryGreen
+  FontColor<<Primary>> $ColorWhite
 }
