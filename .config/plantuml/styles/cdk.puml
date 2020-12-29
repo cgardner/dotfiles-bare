@@ -1,27 +1,27 @@
 ' Color Descriptions found here: https://cdkglobal.frontify.com/document/8#/cdk-global-branding/brand-colors
 ' Primary Colors {{{
-!$Primary = "\#82C600"
-!$Black = "#231F20"
-!$White = "#FFFFFF"
+!$ColorPrimary = "\#82C600"
+!$ColorBlack = "#231F20"
+!$ColorWhite = "#FFFFFF"
 ' }}}
 ' Secondary Colors {{{
-!$SecondaryGreen = "#509E2F"
-!$SecondaryTeal = "#00B2A9"
-!$SecondaryBlue = "#009CDE"
-!$SecondaryDarkTeal = "#00778B"
-!$SecondaryDarkBlue = "#005EB8"
-!$SecondaryBurgundy = "#890C58"
+!$ColorSecondaryGreen = "#509E2F"
+!$ColorSecondaryTeal = "#00B2A9"
+!$ColorSecondaryBlue = "#009CDE"
+!$ColorSecondaryDarkTeal = "#00778B"
+!$ColorSecondaryDarkBlue = "#005EB8"
+!$ColorSecondaryBurgundy = "#890C58"
 ' }}}
 ' Neutral Colors {{{
-!$NeutralKhaki = "#E1D7B0"
-!$NeutralGray = "#A7A8AA"
+!$ColorNeutralKhaki = "#E1D7B0"
+!$ColorNeutralGray = "#A7A8AA"
 ' }}}
 ' Tertiary Colors {{{
-!$TertiaryOrange = "#ED0B00"
-!$TertiaryYellow = "#FEDB00"
+!$ColorTertiaryOrange = "#ED0B00"
+!$ColorTertiaryYellow = "#FEDB00"
 ' }}}
 
 skinparam node {
-  BackgroundColor <<Primary>> $Primary
-  FontColor <<Primary>> $White
+  BackgroundColor <<Primary>> $ColorPrimary
+  FontColor <<Primary>> $ColorWhite
 }
