@@ -1,3 +1,23 @@
-skinparam rectangle {
-  BackgroundColor #ff0000
-}
+' Color Descriptions found here: https://cdkglobal.frontify.com/document/8#/cdk-global-branding/brand-colors
+' Primary Colors {{{
+!$PrimaryColor = "#82C600"
+!$Black = "#231F20"
+!$White = "#FFFFFF"
+' }}}
+' Secondary Colors {{{
+!$SecondaryGreen = "#509E2F"
+!$SecondaryTeal = "#00B2A9"
+!$SecondaryBlue = "#009CDE"
+!$SecondaryDarkTeal = "#00778B"
+!$SecondaryDarkBlue = "#005EB8"
+!$SecondaryBurgundy = "#890C58"
+' }}}
+' Neutral Colors {{{
+!$NeutralKhaki = "#E1D7B0"
+!$NeutralGray = "#A7A8AA"
+' }}}
+' Tertiary Colors {{{
+!$TertiaryOrange = "#ED0B00"
+!$TertiaryYellow = "#FEDB00"
+' }}}
+
