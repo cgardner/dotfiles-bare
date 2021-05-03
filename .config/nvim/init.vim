@@ -87,7 +87,7 @@ set expandtab
 set title
 set number
 set relativenumber
-set guifont=FiraCode\ Nerd\ Font
+set guifont=FiraCode\ Nerd\ Font\ Retina
 
 syntax enable
 " }}}
@@ -96,7 +96,7 @@ syntax enable
 set clipboard=unnamedplus " MacOS
 " }}}
 " Wrapping {{{
-set textwidth=80
+set textwidth=120
 " }}}
 " Colemak {{{
 noremap K J
@@ -211,14 +211,40 @@ let g:ale_linters.java = ['checkstyle']
 " Fixers {{{
 let g:ale_fixers = {}
 
-let g:ale_fixers.javascript = ['eslint', 'prettier']
+let g:ale_fixers.javascript = ['eslint']
 let g:ale_fixers.json = ['jq']
 let g:ale_fixers.markdown = ['remove_trailing_lines', 'trim_whitespace']
 
 let g:ale_fixers.go = ['gofmt']
 " }}}
 " }}} 
+" LSP {{{
+nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <c-K> <cmd>lua vim.lsp.buf.hover()<CR>
 
+lua <<EOF
+  local completion = require("completion")
+  local lspconfig = require("lspconfig")
+  lspconfig.tsserver.setup{on_attach=completion.on_attach}
+  lspconfig.vimls.setup{on_attach=completion.on_attach}
+  lspconfig.gopls.setup{on_attach=completion.on_attach}
+  lspconfig.gdscript.setup{on_attach=completion.on_attach}
+EOF
+" }}}
+" Completion {{{
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
+
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_enable_auto_hover = 1
+
+" }}}
 " UltiSnips {{{
 " let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snippets']
 let g:snips_author="Craig Gardner"
