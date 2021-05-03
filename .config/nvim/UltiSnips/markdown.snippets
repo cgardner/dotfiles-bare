@@ -1,12 +1,11 @@
 snippet plantuml "Create a PlantUML Diagram" b
 \`\`\`plantuml
 @startuml
-
+!include https://raw.githubusercontent.com/bschwarz/puml-themes/master/themes/cyborg/puml-theme-cyborg.puml
 title ${1:Diagram Name}
 
 ${0:diagram}
 
-'
 @enduml
 \`\`\`
 endsnippet
@@ -156,4 +155,7 @@ ${3: Root Cause Findings}
 ## Corrective Actions
 
 - [ ] ${4: First action item to prevent this from happening again}
+endsnippet
+snippet issue "Jira Issue Link"
+[${1:FCC-1234}](https://projects.cdk.com/browse/$1)
 endsnippet
