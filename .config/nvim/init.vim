@@ -1,5 +1,4 @@
 " vim: fdm=marker
-
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 
@@ -61,7 +60,6 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
 
 call plug#end()
 " }}}
-
 " Look and Feel {{{
 " Color Scheme {{{
 colorscheme gruvbox
@@ -83,17 +81,13 @@ set guifont=FiraCode\ Nerd\ Font
 
 syntax enable
 " }}}
-
 " Other Vim Configuration {{{
-
 " Clipboard {{{
 set clipboard=unnamedplus " MacOS
 " }}}
-
 " Wrapping {{{
 set textwidth=80
 " }}}
-
 " Colemak {{{
 noremap K J
 noremap J K
@@ -105,59 +99,59 @@ noremap k j
 nnoremap <C-W>h :wincmd k<CR>
 nnoremap <C-W>j :wincmd h<CR>
 nnoremap <C-W>k :wincmd j<CR>
-" }}}
 
+nnoremap <C-F16> :m .+1<CR>==
+nnoremap <C-_> :m .-2<CR>==
+inoremap <C-F16> <Esc>:m .+1<CR>==gi
+inoremap <C-_> <Esc>:m .-2<CR>==gi
+vnoremap <C-F16> :m '>+1<CR>gv=gv
+vnoremap <C-_> :m '<-2<CR>gv=gv
+" }}}
 " Disable backup files {{{
 set nobackup
 set noswapfile
 set wildignore=*.swp,*.bak
 " }}}
-
 " History {{{
 set history=1000
 set undolevels=1000
 " }}}
-
 " Search {{{
 set incsearch
 " }}}
-
 " Keep the cursor centered {{{
 set scrolloff=999
 " }}}
-
+" Provider{{{
+" let g:python3_host_prog = "/usr/local/bin/python3"
 " }}}
-
+" }}}
+" FZF {{{
+nnoremap <C-p> :Files<cr>
+" }}}
 " Helpers {{{
 let mapleader=","
-
 " Manage vimvrc {{{
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " }}}
-
 " Select All {{{
 " http://vimbits.com/bits/82
 map <Leader>a ggVG
 " }}}
-
 " So I don't have to press shift to run a command {{{
 nnoremap ; :
 " }}}
-
 " Stop highlighting search terms {{{
 noremap <silent><Leader>/ :nohls<CR>
 " }}}
-
 " Toggle Relative Line Numbers {{{
 map <leader>rn :set rnu!<cr>
 " }}}
 " }}}
-
 " NERDTree {{{
 map <leader>n :NERDTreeToggle<CR>
 " }}}
-
 " Lightline {{{
 
 let g:lightline = {
