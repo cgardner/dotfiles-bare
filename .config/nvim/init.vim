@@ -40,6 +40,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'masukomi/vim-markdown-folding'
 Plug 'reedes/vim-lexical', {'for': ['markdown']}
+Plug 'jkramer/vim-checkbox'
 " }}}
 
 " Ledger {{{
@@ -49,6 +50,15 @@ Plug 'ledger/vim-ledger'
 " Utilities {{{
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
+
+Plug 'nvim-lua/completion-nvim', { 'branch': 'master' }
+Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+" }}}
+" Godot {{{
+Plug 'habamax/vim-godot'
+Plug 'calviken/vim-gdscript3'
 " }}}
 
 " APM {{{
@@ -214,17 +224,66 @@ let g:ale_fixers.go = ['gofmt']
 let g:snips_author="Craig Gardner"
 let g:snips_email="craig.gardner@cdk.com"
 " }}}
-
 " Markdown Preview {{{
 let g:mkdp_preview_options = {
 \   'uml': {
-\     'imageFormat': 'png'
+\     'imageFormat': 'png',
+\     'server': 'http://localhost:8080'
 \   }
 \ }
 " }}}
-
+" vim-checkbox {{{
+let g:checkbox_states = [' ', '-', 'x']
+" }}}
 " vim-lexical {{{
 let g:lexical#thesaurus = ['~/.config/nvim/thesaurus/mthesaur.txt',]
 let g:lexical#dictionary = ['/usr/share/dict/words',]
 let g:lexical#spellfile = ['~/.config/nvim/spell/en.utf-8.add',]
+" }}}
+" Godot {{{
+let g:godot_executable="/Applications/Godot.app/Contents/MacOS/Godot"
+" }}}
+" FireNVIM {{{
+if exists('g:started_by_firenvim')
+  set laststatus=0
+
+  let g:firenvim_config = { 
+      \ 'globalSettings': {
+          \ 'alt': 'all',
+          \ '<C-w>': 'noop',
+          \ '<C-n>': 'default',
+      \  },
+      \ 'localSettings': {
+          \ '.*': {
+              \ 'cmdline': 'nvim',
+              \ 'content': 'text',
+              \ 'priority': 0,
+              \ 'selector': 'textarea',
+              \ 'takeover': 'always',
+          \ },
+      \ }
+  \ }
+  let fc = g:firenvim_config['localSettings']
+  let fc['https?://confluence.cdk.com/*'] = {  
+      \'takeover': 'once'
+    \}
+  let fc['https?://*.splunkcloud.com/*'] = {  
+      \'takeover': 'once'
+    \}
+  let fc['https?://voice.google.com/*'] = {
+      \'takeover': 'never'
+    \}
+  let fc['https?://127.0.0.1:?*'] = {
+      \'takeover': 'never'
+    \}
+  let fc['https?://localhost:?*'] = {
+      \'takeover': 'never'
+    \}
+endif
+" }}}
+" vim-tpipeline {{{
+" tpipeline comes bundled with its own custom minimal statusline seen above
+let g:tpipeline_statusline = '%!tpipeline#stl#line()'
+" You can also use standard statusline syntax, see :help stl
+let g:tpipeline_statusline = '%f'
 " }}}
