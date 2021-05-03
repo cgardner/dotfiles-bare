@@ -26,12 +26,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'itchyny/lightline.vim'
 " }}}
 
-" IntelliSense {{{
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" }}}
-
 " Linting {{{
 Plug 'dense-analysis/ale'
+" }}}
+" LSP {{{
+Plug 'neovim/nvim-lspconfig'
 " }}}
 
 " Snippets {{{
@@ -193,28 +192,6 @@ function! MyFileformat()
   return winwidth(0) > 70 ? (WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 " }}}
-
-" COC {{{
-" Trigger Completion {{{
-inoremap <silent><expr> <c-space> coc#refresh()
-" }}}
-" Show Documentation {{{
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-" }}}
-" Highlighting {{{
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" }}}
-" }}}
-
 " ALE  {{{
 " Configuration {{{
 let g:ale_fix_on_save = 1
