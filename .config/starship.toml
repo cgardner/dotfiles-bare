@@ -34,18 +34,13 @@ disabled = false
 symbol = " "
 
 [git_status]
-staged_count.enabled = true
-deleted_count.enabled = true
-renamed_count.enabled = true
-modified_count.enabled = true
-show_sync_count = true
+staged.enabled = true
+deleted.enabled = true
+renamed.enabled = true
+modified.enabled = true
+
+[memory_usage]
+disabled = false
 
 [java]
 format = ""
-
-[directory]
-format = ""
-
-[golang]
-symbol = "ﳑ"
-
