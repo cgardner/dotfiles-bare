@@ -55,6 +55,8 @@ Plug 'nvim-lua/completion-nvim', { 'branch': 'master' }
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}}
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+
+Plug 'folke/zen-mode.nvim'
 " }}}
 " Godot {{{
 Plug 'habamax/vim-godot'
@@ -312,4 +314,20 @@ endif
 let g:tpipeline_statusline = '%!tpipeline#stl#line()'
 " You can also use standard statusline syntax, see :help stl
 let g:tpipeline_statusline = '%f'
+" }}}
+" Zen Mode {{{
+lua << EOF
+  require("zen-mode").setup {
+    window = {
+      width = 135,
+      options = {
+        relativenumber = true,
+      },
+    },
+    plugins = {
+      tmux = { enabled = true },
+      kitty = { enabled = true },
+    },
+  }
+EOF
 " }}}
