@@ -1,52 +1,42 @@
 " vim: fdm=marker
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
-
 " Colors {{{
 Plug 'morhetz/gruvbox'
 " }}}
-
 " File Browser {{{
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
 " }}}
-
 " Tim Pope {{{
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " }}}
-
 " Syntax {{{
 Plug 'sheerun/vim-polyglot'
 " }}}
-
 " Lightline {{{
 Plug 'itchyny/lightline.vim'
 " }}}
-
 " Linting {{{
 Plug 'dense-analysis/ale'
 " }}}
 " LSP {{{
 Plug 'neovim/nvim-lspconfig'
 " }}}
-
 " Snippets {{{
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 " }}}
-
 " Markdown {{{
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'masukomi/vim-markdown-folding'
 Plug 'reedes/vim-lexical', {'for': ['markdown']}
 Plug 'jkramer/vim-checkbox'
 " }}}
-
 " Ledger {{{
 Plug 'ledger/vim-ledger'
 " }}}
-
 " Utilities {{{
 Plug 'godlygeek/tabular'
 Plug 'mattn/emmet-vim'
@@ -62,14 +52,12 @@ Plug 'folke/zen-mode.nvim'
 Plug 'habamax/vim-godot'
 Plug 'calviken/vim-gdscript3'
 " }}}
-
 " APM {{{
 Plug 'ThePrimeagen/vim-apm'
 " }}}
 " External Plugins {{{
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(1) } }
 " }}}
-
 call plug#end()
 " }}}
 " Look and Feel {{{
