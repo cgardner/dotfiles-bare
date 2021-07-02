@@ -249,7 +249,7 @@ let g:mkdp_preview_options = {
 \ }
 " }}}
 " vim-checkbox {{{
-let g:checkbox_states = [' ', '-', 'x']
+let g:checkbox_states = [' ', 'x']
 " }}}
 " vim-lexical {{{
 let g:lexical#thesaurus = ['~/.config/nvim/thesaurus/mthesaur.txt',]
