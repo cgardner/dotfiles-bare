@@ -9,4 +9,11 @@ local function config()
 end
 M.config = config
 
+M.init = function()
+  if vim.g.started_by_firenvim ~= nil then
+    vim.cmd[[set laststatus=0]]
+    vim.cmd[[set textwidth=0]]
+  end
+end
+
 return M
