@@ -65,6 +65,10 @@ packer.startup({function(use)
   use{'mattn/emmet-vim',
     cond = is_not_firenvim
   }
+
+  use {'sbdchd/neoformat',
+    config= require('plugins/neoformat').config
+  }
 end,
   config = {
     display = {
