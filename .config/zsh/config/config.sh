@@ -6,6 +6,9 @@ function _config() {
     "reset")
       $git $flags reset HEAD
       ;;
+    "st")
+      $git $flags st -uno
+      ;;
     *)
       $git $flags $@
       ;;
