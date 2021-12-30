@@ -25,9 +25,15 @@ packer.startup(
             use {"neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer"}
             use {"ms-jpq/coq_nvim", "ms-jpq/coq.artifacts"}
             use {
-                "nvim-telescope/telescope.nvim",
-                requires = "nvim-lua/plenary.nvim",
-                config = require("plugins/telescope").config
+                "renerocksai/telekasten.nvim",
+                requires = {
+                    {
+                        "nvim-telescope/telescope.nvim",
+                        config = require("plugins/telescope").config
+                    },
+                    "nvim-lua/plenary.nvim"
+                },
+                config = require("plugins/telekasten").config
             }
             use {
                 "kyazdani42/nvim-tree.lua",
