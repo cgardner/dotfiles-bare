@@ -1,51 +1,6 @@
 # vim: foldmethod=marker
-# Functions {{{
-function dstask() {
-  local action="$1"
-  case $action in
-    "jira")
-      shift;
-      JIRA_PROJECT="FLEXPLAT"
-
-      local stories=()
-      echo "Creating stories for $@ in $JIRA_PROJECT"
-      for id in ${@}; do
-        local summary=$(command dstask $id | jq -r '.[0].summary | tostring')
-        local notes=$(command dstask $id | jq -r '.[0].notes | tostring')
-
-        local story=$(jira create -p $JIRA_PROJECT -i 'Story' --noedit \
-          --override reporter=$(whoami) --override summary="${summary}" \
-          --override description="${notes}" | awk '{ print $3 }')
-        stories+=($story)
-      done
-      command dstask $@ done
-      echo $stories
-
-      ;;
-    "interview")
-      command dstask add "${2}" template:65
-      ;;
-    "export" | "ex")
-      shift
-      local id="${1}"
-
-      local summary=$(command dstask $id | jq -r '.[0].summary | tostring')
-      local notes=$(command dstask $id |jq -r '.[0].notes | tostring')
-
-      echo "${notes}" | pandoc --defaults \
-        $HOME/.config/pandoc/defaults.yaml --filter pandoc-plantuml -o \
-        $HOME/Downloads/$summary.docx
-
-      echo "\"$HOME/Downloads/$summary.docx\""
-      ;;
-    *)
-      command dstask $@
-      ;;
-  esac
-}
-# }}}
 # Aliases {{{
-TASK_APP="dstask"
+TASK_APP="tasks"
 alias ,t="$TASK_APP"
 alias ,ta="$TASK_APP add"
 alias ,tin="$TASK_APP show-unorganised"
@@ -56,6 +11,7 @@ alias ,tt="_task_set_context +today"
 
 alias ,te="$EDITOR $0 && source $0"
 alias ,tex="_task_export_notes"
+alias ,note="_note"
 # }}}
 # Completions {{{
 _dstask() {
@@ -65,6 +21,13 @@ _dstask() {
 compdef _dstask dstask
 # }}}
 # Utilities {{{
+NOTES_DIR="$HOME/Documents/work"
+
+function _note() {
+  pushd $NOTES_DIR
+  $EDITOR -c "Telekasten"
+  popd
+}
 
 function _task_export_notes() {
   NOTES=$($TASK_APP $1 notes)
