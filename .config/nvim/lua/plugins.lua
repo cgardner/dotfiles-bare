@@ -22,8 +22,30 @@ packer.startup(
                 "eddyekofo94/gruvbox-flat.nvim",
                 config = require("plugins/gruvbox-flat").config
             }
-            use {"neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer"}
-            use {"ms-jpq/coq_nvim", "ms-jpq/coq.artifacts"}
+            use {
+                "neovim/nvim-lspconfig",
+                "williamboman/nvim-lsp-installer"
+            }
+            use {
+                "hrsh7th/nvim-cmp",
+                requires = {
+                    "hrsh7th/cmp-nvim-lsp",
+                    "hrsh7th/cmp-buffer",
+                    "hrsh7th/cmp-path"
+                    -- "hrsh7th/cmp-cmdline",
+                },
+                conifg = require("plugins.nvim_cmp").config
+            }
+            -- use {"ms-jpq/coq_nvim", "ms-jpq/coq.artifacts", disable = false}
+
+            use {
+                "sirver/UltiSnips",
+                requires = {
+                    "honza/vim-snippets",
+                    "quangnguyen30192/cmp-nvim-ultisnips"
+                },
+                config = require("plugins.ultisnips").config
+            }
             use {
                 "renerocksai/telekasten.nvim",
                 requires = {

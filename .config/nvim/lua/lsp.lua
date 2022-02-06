@@ -1,5 +1,5 @@
+require('plugins.nvim_cmp').init()
 local lsp_installer = require("nvim-lsp-installer")
-local coq = require("coq")
 
 lsp_installer.settings(
     {
@@ -44,7 +44,7 @@ local on_attach = function(_, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = coq.lsp_ensure_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
 
 lsp_installer.on_server_ready(
     function(server)
