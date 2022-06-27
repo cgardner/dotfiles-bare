@@ -5,10 +5,7 @@ alias ,zr="zref"
 alias ,ze="$editor $home/.config/zsh/zshrc.sh && source $home/.config/zsh/zshrc.sh"
 # }}}
 # upgrayedd {{{
-alias upgrayedd='HOMEBREW_NO_INSTALL_CLEANUP=1 brew upgrade --greedy; \
-  brew cleanup ; \
-  nvim -c "PlugUpdate" -c "PlugUpgrade" -c "PlugClean" -c "qa!" ; \
-  npm-check -y -g' 
+alias upgrayedd='pip3 install -U meta-package-manager && mpm sync && mpm upgrade' 
 # }}}
 # tmuxinator {{{
 alias ,mux="mux"
@@ -47,6 +44,8 @@ gupdate() {
 
 alias pl="ls $HOME/src"
 
+alias docker="podman"
+
 # Helpers {{{
 md() {
   mkdir -p $1
@@ -77,3 +76,4 @@ ytdl() {
   youtube-dl -f best -o '~/Downloads/Videos/%(title)s.%(ext)s' "${1}"
 }
 # }}}
+

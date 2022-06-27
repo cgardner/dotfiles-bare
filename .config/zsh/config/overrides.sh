@@ -1,3 +1,3 @@
 
-alias ls="exa"
+alias ls="exa --long --git"
 alias cat="bat"
