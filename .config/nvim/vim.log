@@ -1,0 +1,40 @@
+
+not found in 'packpath': "pack/*/opt/packer.nvim"
+not found in 'packpath': "pack/*/opt/packer.nvim"
+not found in runtime path: "ftdetect/*.vim"
+not found in runtime path: "ftdetect/*.lua"
+not found in 'packpath': "pack/*/start/matchit"
+not found in 'packpath': "pack/*/opt/packer.nvim"
+not found in 'packpath': "start/*"
+not found in runtime path: "plugin/**/*.vim"
+not found in runtime path: "plugin/**/*.lua"
+Reading ShaDa file "/Users/gardnerc/.local/share/nvim/shada/main.shada" info marks oldfiles
+
+not found in runtime path: "ftplugin/packer.vim ftplugin/packer_*.vim ftplugin/packer/*.vim"
+not found in runtime path: "ftplugin/packer.lua ftplugin/packer_*.lua ftplugin/packer/*.lua"
+not found in runtime path: "indent/packer.vim"
+not found in runtime path: "indent/packer.lua"
+not found in runtime path: "syntax/packer.vim syntax/packer/*.vim"
+not found in runtime path: "syntax/packer.lua syntax/packer/*.lua"
+not found in runtime path: "rplugin/perl/*"
+not found in runtime path: "rplugin/node/*"
+not found in runtime path: "rplugin/python3/*"
+not found in runtime path: "rplugin/ruby/*.rb"
+not found in runtime path: "rplugin/python/*"
+remote/host: generated rplugin manifest: /Users/gardnerc/.local/share/nvim/rplugin.vim
+
+
+
+
+not found in runtime path: "ftplugin/packer.vim ftplugin/packer_*.vim ftplugin/packer/*.vim"
+not found in runtime path: "ftplugin/packer.lua ftplugin/packer_*.lua ftplugin/packer/*.lua"
+not found in runtime path: "indent/packer.vim"
+not found in runtime path: "indent/packer.lua"
+not found in runtime path: "syntax/packer.vim syntax/packer/*.vim"
+not found in runtime path: "syntax/packer.lua syntax/packer/*.lua"
+-- VISUAL LINE --
+
+E16: Invalid range
+
+
+Writing ShaDa file "/Users/gardnerc/.local/share/nvim/shada/main.shada"

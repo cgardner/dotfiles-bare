@@ -1,0 +1,25 @@
+snippet prompt "Create a Journal Prompt"
+# Prompt - ${1:prompt}
+endsnippet
+
+snippet go "Start new note section"
+## `date +"%B %d, %Y"` ${1:- ${2:topic}}
+
+${0}
+endsnippet
+
+snippet quote "Random Stoic Quote"
+`!p 
+import http.client
+import json
+
+if not snip.c:
+	conn = http.client.HTTPSConnection("stoicquotesapi.com")
+	conn.request("GET", "/v1/api/quotes/random")
+	res = conn.getresponse()
+	data = res.read()
+	obj = json.loads(data)
+	print(obj.keys())
+	snip.rv = "> " + obj['body'] + "\n>\n> -- " + obj['author']
+`
+endsnippet

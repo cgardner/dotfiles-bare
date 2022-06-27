@@ -12,11 +12,13 @@ endsnippet
 
 snippet gherkin "Create a new Gherkin Snippet" b
 \`\`\`gherkin
-Scenario: ${1:Scenario Description}
-Given ${2:a scenario is set up}
-When ${3:the scenario gets executed}
-Then ${4:the expected results of the scenario}
-${5:And something else that the scenario supports}
+Feature: ${1: Feature Descriptino}
+
+  Scenario: ${2:Scenario Description}
+    Given ${3:a scenario is set up}
+    When ${4:the scenario gets executed}
+    Then ${5:the expected results of the scenario}
+    ${6:And something else that the scenario supports}
 \`\`\`
 endsnippet
 

@@ -3,7 +3,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     PackerBootstrap =
         vim.fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
     vim.cmd [[packadd packer.nvim]]
-    vim.cmd [[packadd packer.nvim]]
+--    vim.cmd [[packadd packer.nvim]]
 end
 
 local function is_firenvim()
@@ -18,23 +18,23 @@ packer.reset()
 packer.startup(
     {
         function(use)
+            use {"wbthomason/packer.nvim"}
             use {
                 "eddyekofo94/gruvbox-flat.nvim",
-                config = require("plugins/gruvbox-flat").config
+                config = require("plugins/gruvbox-flat").config,
+                cond = is_not_firenvim
             }
             use {
                 "neovim/nvim-lspconfig",
-                "williamboman/nvim-lsp-installer"
+                "williamboman/nvim-lsp-installer",
+                cond = is_not_firenvim
             }
             use {
                 "hrsh7th/nvim-cmp",
-                requires = {
-                    "hrsh7th/cmp-nvim-lsp",
-                    "hrsh7th/cmp-buffer",
-                    "hrsh7th/cmp-path"
-                    -- "hrsh7th/cmp-cmdline",
-                },
-                conifg = require("plugins.nvim_cmp").config
+                "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-buffer",
+                "hrsh7th/cmp-path",
+                cond = is_not_firenvim
             }
             -- use {"ms-jpq/coq_nvim", "ms-jpq/coq.artifacts", disable = false}
 
@@ -44,7 +44,8 @@ packer.startup(
                     "honza/vim-snippets",
                     "quangnguyen30192/cmp-nvim-ultisnips"
                 },
-                config = require("plugins.ultisnips").config
+                config = require("plugins.ultisnips").config,
+                cond = is_not_firenvim
             }
             use {
                 "renerocksai/telekasten.nvim",
@@ -55,7 +56,8 @@ packer.startup(
                     },
                     "nvim-lua/plenary.nvim"
                 },
-                config = require("plugins/telekasten").config
+                config = require("plugins/telekasten").config,
+                cond = is_not_firenvim
             }
             use {
                 "kyazdani42/nvim-tree.lua",
@@ -66,7 +68,8 @@ packer.startup(
             use {
                 "nvim-treesitter/nvim-treesitter",
                 run = ":TSUpdate",
-                config = require("plugins/nvim-treesitter").config
+                config = require("plugins/nvim-treesitter").config,
+                cond = is_not_firenvim
             }
             use {"tpope/vim-commentary", "tpope/vim-surround"}
             use {
@@ -77,8 +80,9 @@ packer.startup(
             }
             use {
                 "plasticboy/vim-markdown",
-                ft = {"markdown"},
-                requires = "godlygeek/tabular"
+                ft = {"markdown", "telekasten"},
+                requires = "godlygeek/tabular",
+                cond = is_not_firenvim
             }
             use {
                 "glacambre/firenvim",
@@ -90,15 +94,8 @@ packer.startup(
                 cond = is_firenvim
             }
             use {
-                "konapun/vacuumline.nvim",
-                branch = "next",
-                requires = {
-                    "glepnir/galaxyline.nvim",
-                    branch = "main",
-                    "kyazdani42/nvim-web-devicons",
-                    opt = true
-                },
-                config = require("plugins/vacuumline").config,
+                "feline-nvim/feline.nvim",
+                config = require("plugins/feline").config,
                 cond = is_not_firenvim
             }
             use {
@@ -111,14 +108,44 @@ packer.startup(
             }
 
             use {
-                "sbdchd/neoformat",
-                config = require("plugins/neoformat").config
+                "fatih/vim-go",
+                cond = is_not_firenvim
             }
+
+            use {
+                "sbdchd/neoformat",
+                config = require("plugins/neoformat").config,
+                cond = is_not_firenvim
+            }
+            use {
+                "tpope/vim-fugitive",
+                cond = is_not_firenvim
+            }
+            use {
+                "folke/zen-mode.nvim",
+                config = require("plugins.zen-mode").config,
+                cond = is_not_firenvim
+            }
+            use {
+                "folke/twilight.nvim",
+                config = require("plugins.twilight").config,
+                cond = is_not_firenvim
+            }
+            use {
+                "github/copilot.vim",
+                cond = is_not_firenvim,
+                config = require("plugins.copilot").config
+            }
+            -- Auto run sync if first time install
+            if packer_bootstrap then
+                require("packer").sync()
+            end
         end,
         config = {
             display = {
                 open_fn = require("packer.util").float,
-                prompt_border = "single"
+                prompt_border = "single",
+                compile_path = vim.fn.stdpath("config") .. "/lua/packer_compiled.lua"
             }
         }
     }

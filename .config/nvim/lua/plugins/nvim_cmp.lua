@@ -1,7 +1,11 @@
 local M = {}
 
 local function init()
-    local cmp = require("cmp")
+    if (vim.g.started_by_firenvim == true) 
+    then
+      return
+    end
+    local cmp = require('cmp')
     cmp.setup(
         {
             snippet = {
@@ -54,10 +58,5 @@ local function init()
     -- )
 end
 M.init = init
-
-function config()
-
-end
-M.config = config
 
 return M
