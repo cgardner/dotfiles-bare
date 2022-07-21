@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>iconid</key>
+	<string>3015C6FD-CDFE-4BB9-8473-5777F09BDDDE</string>
+	<key>iconisuserspecified</key>
+	<true/>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>actionconfig</key>
+			<dict>
+				<key>url</key>
+				<string>https://www.youtube.com</string>
+			</dict>
+			<key>actionuid</key>
+			<string>remote.alfred.openurl</string>
+			<key>buttoniconid</key>
+			<string>C6CA5D49-14B3-4D7E-B1B2-A7E0647316B3</string>
+			<key>buttonlabel</key>
+			<string></string>
+			<key>itemuid</key>
+			<string>C75933B4-5FA4-4335-95E3-86BEBD19DA37</string>
+		</dict>
+		<dict>
+			<key>actionconfig</key>
+			<dict>
+				<key>url</key>
+				<string>https://www.facebook.com</string>
+			</dict>
+			<key>actionuid</key>
+			<string>remote.alfred.openurl</string>
+			<key>buttoniconid</key>
+			<string>A2E03AF7-6BF4-4B8F-8BDD-A1AA2961F13F</string>
+			<key>buttonlabel</key>
+			<string></string>
+			<key>itemuid</key>
+			<string>08DDC72C-77CA-4996-AEAE-35B68A0A98E3</string>
+		</dict>
+		<dict>
+			<key>actionconfig</key>
+			<dict>
+				<key>url</key>
+				<string>https://www.alfredapp.com</string>
+			</dict>
+			<key>actionuid</key>
+			<string>remote.alfred.openurl</string>
+			<key>buttoniconid</key>
+			<string>9C39ACDC-DEC7-4B59-80FA-0FB58DC15F42</string>
+			<key>buttonlabel</key>
+			<string></string>
+			<key>itemuid</key>
+			<string>D3D0196C-9A7D-46E0-90F6-42E6F5B891C5</string>
+		</dict>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+	</array>
+	<key>subtitle</key>
+	<string>URLs and Custom Searches</string>
+	<key>title</key>
+	<string>Bookmarks</string>
+</dict>
+</plist>

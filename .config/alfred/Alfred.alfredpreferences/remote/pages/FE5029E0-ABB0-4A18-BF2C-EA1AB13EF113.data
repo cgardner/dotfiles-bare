@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>backgroundcolor</key>
+	<array>
+		<real>0.11848728358745575</real>
+		<real>0.11850547790527344</real>
+		<real>0.11847867071628571</real>
+	</array>
+	<key>iconid</key>
+	<string>2C41932A-ACCF-44A2-BFE9-BDB15ECCD8D9</string>
+	<key>iconisuserspecified</key>
+	<false/>
+	<key>items</key>
+	<array>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+	</array>
+	<key>subtitle</key>
+	<string></string>
+	<key>title</key>
+	<string>Productivity</string>
+</dict>
+</plist>
