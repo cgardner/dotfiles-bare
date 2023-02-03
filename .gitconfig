@@ -45,6 +45,10 @@
 [fetch]
   recurseSubmodules = false
   prune             = true
+[url "git@github_cdk:cdk-prod"]
+  insteadOf = git@github.com:cdk-prod
+[url "git@github_cdk:Craig-Gardner_cdk"]
+  insteadOf = git@github.com:Craig-Gardner_cdk
 [url "ssh://git@"]
   insteadOf = git://
 [commit]
