@@ -42,8 +42,6 @@
   algorithm = patience
 [push]
   default = simple
-[init]
-  templatedir = ~/.dotfiles/git/template
 [fetch]
   recurseSubmodules = false
   prune             = true
@@ -56,3 +54,5 @@
   program = gpg
 [pull]
 	rebase = true
+[init]
+  defaultBranch = main
