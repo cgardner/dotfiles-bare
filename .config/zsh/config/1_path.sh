@@ -1,6 +1,7 @@
+HOMEBREW_PREFIX=$(brew config |rg HOMEBREW_PREFIX | awk '{ print $2 }')
 PATHS=(
-  "/usr/local/sbin"
-  "/usr/local/bin"
+  "$HOMEBREW_PREFIX/bin"
+  "$HOMEBREW_PREFXI/opt/ruby"
   "./node_modules/.bin"
   "${HOME}/go/bin"
   "${HOME}/.cargo/bin"
