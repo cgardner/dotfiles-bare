@@ -168,7 +168,7 @@
 	<key>description</key>
 	<string>Open a Zoom meeting link without the browser opening</string>
 	<key>disabled</key>
-	<false/>
+	<true/>
 	<key>name</key>
 	<string>Join Zoom Meeting</string>
 	<key>objects</key>
