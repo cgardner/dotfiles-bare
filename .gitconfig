@@ -52,10 +52,9 @@
 [url "ssh://git@"]
   insteadOf = git://
 [commit]
-  template = ~/.dotfiles/git/commit-template
   gpgsign = true
 [gpg]
-  program = gpg
+  program = /opt/homebrew/bin/gpg
 [pull]
 	rebase = true
 [init]
