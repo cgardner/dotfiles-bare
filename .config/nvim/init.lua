@@ -21,7 +21,8 @@ vim.opt.wildignore = "*.swp,*.bak"
 vim.opt.history = 1000
 vim.opt.undolevels = 1000
 vim.g.incserarch = true
-vim.g.python3_host_prog = "/usr/local/bin/python3"
+vim.g.python3_host_prog = "/usr/bin/python3"
+
 
 require('plugins.firenvim').init()
 require('plugins.telescope').init()
