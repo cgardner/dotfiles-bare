@@ -3,11 +3,13 @@ declare -a PATHS=(
   "$HOMEBREW_PREFIX/bin"
   "$HOMEBREW_PREFXI/opt/ruby"
   "./node_modules/.bin"
+  "${HOME}/bin"
   "${HOME}/go/bin"
   "${HOME}/.cargo/bin"
   "${HOME}/.joplin-bin/bin/"
   "${HOME}/Library/Python/3.7/bin/"
   "/usr/local/opt/openjdk/bin/"
+  "${HOME}/src/kafka/bin"
 )
 
 SPLIT_PATH=($(echo "${PATH}" | tr ":" "\n"))

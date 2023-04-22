@@ -28,9 +28,13 @@ alias g="git"
 
 clone() {
   REPO_URL=$1
+  REPO_BASE=$(basename $REPO_URL)
+  REPO_PATH="${REPO_BASE%.*}"
   pushd $HOME/src
   git clone $REPO_URL
   popd
+ 
+  code $HOME/src/$REPO_PATH
 }
 
 gupdate() {

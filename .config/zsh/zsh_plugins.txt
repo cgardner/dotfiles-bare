@@ -2,4 +2,4 @@ softmoth/zsh-vim-mode
 # romkatv/powerlevel10k
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
-wfxr/forgit
+#wfxr/forgit

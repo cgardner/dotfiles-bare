@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 ZSH_ROOT="$HOME/.config/zsh"
 ZSH_PLUGIN_DIR="$ZSH_ROOT/plugins"
 GPG_TTY=$(tty)
@@ -48,4 +49,4 @@ compinit
 load_dir $ZSH_ROOT/config
 load_source $ZSH_ROOT/keybindings.sh
 load_source $ZSH_ROOT/node.sh
-
+# zprof
