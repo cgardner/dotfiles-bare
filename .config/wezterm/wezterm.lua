@@ -11,7 +11,8 @@ end)
 
 return {
   font = wezterm.font("FiraCode Nerd Font"),
-  color_scheme = "Gruvbox Dark",
+  -- color_scheme_dirs = { "./themes" },
+  color_scheme = "Gruvbox dark, hard (base16)",
   window_decorations = "RESIZE",
   window_padding = {
     left = 0,
