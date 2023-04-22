@@ -4,6 +4,7 @@ $username\
 $hostname\
 $directory\
 $git_branch\
+$git_status\
 $golang\
 $java\
 $nodejs\
@@ -52,6 +53,7 @@ format = "[$symbol $version](bold green)"
 symbol = "🤖"
 disabled = true
 
-[custom.pomodoro]
-command = "pomodoro status"
-shell = ["sh"]
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
