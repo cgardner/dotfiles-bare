@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "https:\/\/www.linkedin.com\/in\/craigsgardner\/",
+    "dontautoexpand" : true,
     "uid" : "CD32B0DD-67CF-49AD-B171-68CB73D39FBB",
     "name" : "LinkedIn",
     "keyword" : ",li"

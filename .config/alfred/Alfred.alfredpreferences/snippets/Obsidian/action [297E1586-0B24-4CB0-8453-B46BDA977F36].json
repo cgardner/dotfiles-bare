@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "[action:: {cursor}]",
+    "dontautoexpand" : true,
     "uid" : "297E1586-0B24-4CB0-8453-B46BDA977F36",
     "name" : "action",
     "keyword" : "a"

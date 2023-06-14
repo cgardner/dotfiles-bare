@@ -1,6 +1,7 @@
 {
   "alfredsnippet" : {
     "snippet" : "everybody",
+    "dontautoexpand" : true,
     "uid" : "33BFC2B9-3E68-4566-BDDB-05EFC5810CDF",
     "name" : "guys",
     "keyword" : "guys"
