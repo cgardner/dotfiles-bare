@@ -1,0 +1,9 @@
+matches:
+  - trigger: ",em"
+    replace: "craig.s.gardner@proton.me"
+  - trigger: ",pn"
+    replace: "619-330-5602"
+  - trigger: ",li"
+    replace: "https://www.linkedin.com/in/craigsgardner/"
+  - trigger: ",gh"
+    replace: "https://github.com/cgardner"

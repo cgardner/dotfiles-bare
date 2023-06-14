@@ -1,0 +1,5 @@
+matches:
+  - trigger: ";kids"
+    replace: "👦👧"
+  - trigger: ";interview"
+    replace: "🗣 Interview with "
