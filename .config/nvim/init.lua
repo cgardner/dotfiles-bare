@@ -11,7 +11,6 @@ vim.cmd[[set smartindent]]
 vim.cmd[[set expandtab]]
 vim.cmd[[set termguicolors]]
 vim.cmd('set guifont="FiraCode\\ Nerd\\ Font\\ Retina:h18"')
--- vim.cmd[[let g:coq_settings = { 'auto_start': 'shut-up' }]]
 
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.textwidth = 120

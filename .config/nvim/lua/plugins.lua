@@ -30,13 +30,12 @@ packer.startup(
                 cond = is_not_firenvim
             }
             use {
-                "hrsh7th/nvim-cmp",
                 "hrsh7th/cmp-nvim-lsp",
                 "hrsh7th/cmp-buffer",
                 "hrsh7th/cmp-path",
+                "hrsh7th/nvim-cmp",
                 cond = is_not_firenvim
             }
-            -- use {"ms-jpq/coq_nvim", "ms-jpq/coq.artifacts", disable = false}
 
             use {
                 "sirver/UltiSnips",
@@ -45,18 +44,6 @@ packer.startup(
                     "quangnguyen30192/cmp-nvim-ultisnips"
                 },
                 config = require("plugins.ultisnips").config,
-                cond = is_not_firenvim
-            }
-            use {
-                "renerocksai/telekasten.nvim",
-                requires = {
-                    {
-                        "nvim-telescope/telescope.nvim",
-                        config = require("plugins/telescope").config
-                    },
-                    "nvim-lua/plenary.nvim"
-                },
-                config = require("plugins/telekasten").config,
                 cond = is_not_firenvim
             }
             use {
@@ -99,19 +86,13 @@ packer.startup(
                 cond = is_not_firenvim
             }
             use {
-                "ledger/vim-ledger",
-                cond = is_not_firenvim
-            }
-            use {
                 "mattn/emmet-vim",
                 cond = is_not_firenvim
             }
-
             use {
                 "fatih/vim-go",
                 cond = is_not_firenvim
             }
-
             use {
                 "sbdchd/neoformat",
                 config = require("plugins/neoformat").config,
@@ -135,6 +116,10 @@ packer.startup(
                 "github/copilot.vim",
                 cond = is_not_firenvim,
                 config = require("plugins.copilot").config
+            }
+            use {
+              'stevearc/aerial.nvim',
+              config = function() require('aerial').setup() end
             }
             -- Auto run sync if first time install
             if packer_bootstrap then
