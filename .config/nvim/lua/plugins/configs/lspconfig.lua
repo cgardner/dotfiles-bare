@@ -41,7 +41,9 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-require("lspconfig").lua_ls.setup {
+local lspconfig = require "lspconfig"
+
+lspconfig.lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
 
@@ -62,6 +64,32 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
+}
+
+lspconfig.gopls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  settings = {
+    gopls = {
+      gofumpt = true,
+      staticcheck = true,
+    },
+  },
+}
+
+lspconfig.intelephense.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  settings = {
+    intelephense = {
+      
+      environment = {
+        phpVersion = "8.2"
+      }
+    }
+  }
 }
 
 return M

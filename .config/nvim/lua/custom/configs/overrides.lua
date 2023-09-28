@@ -15,6 +15,7 @@ M.treesitter = {
     "go",
     "gomod",
     "gosum",
+    "php",
   },
   indent = {
     enable = true,
@@ -42,6 +43,9 @@ M.mason = {
     "goimports",
     "gofumpt",
 
+    -- php stuff
+    "php-cs-fixer",
+    "intelephense",
   },
 }
 

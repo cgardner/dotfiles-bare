@@ -10,8 +10,8 @@ M.ui = {
   hl_add = {},
   hl_override = {},
   changed_themes = {},
-  theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme_toggle = { "gruvbox", "gruvbox_light" },
+  theme = "gruvbox", -- default theme
   transparency = false,
   lsp_semantic_tokens = false, -- needs nvim v0.9, just adds highlight groups for lsp semantic tokens
 
@@ -22,7 +22,7 @@ M.ui = {
   cmp = {
     icons = true,
     lspkind_text = true,
-    style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+    style = "flat_dark", -- default/flat_light/flat_dark/atom/atom_colored
     border_color = "grey_fg", -- only applicable for "default" style, use color names from base30 variables
     selected_item_bg = "colored", -- colored / simple
   },
@@ -41,14 +41,14 @@ M.ui = {
   -- lazyload it when there are 1+ buffers
   tabufline = {
     show_numbers = false,
-    enabled = true,
+    enabled = false,
     lazyload = true,
     overriden_modules = nil,
   },
 
   -- nvdash (dashboard)
   nvdash = {
-    load_on_startup = false,
+    load_on_startup = true,
 
     header = {
       "           ▄ ▄                   ",
@@ -63,12 +63,12 @@ M.ui = {
     },
 
     buttons = {
-      { "  Find File", "Spc f f", "Telescope find_files" },
-      { "󰈚  Recent Files", "Spc f o", "Telescope oldfiles" },
-      { "󰈭  Find Word", "Spc f w", "Telescope live_grep" },
-      { "  Bookmarks", "Spc m a", "Telescope marks" },
-      { "  Themes", "Spc t h", "Telescope themes" },
-      { "  Mappings", "Spc c h", "NvCheatsheet" },
+      { "  Find File", ", f f", "Telescope find_files" },
+      { "󰈚  Recent Files", ", f o", "Telescope oldfiles" },
+      { "󰈭  Find Word", ", f w", "Telescope live_grep" },
+      { "  Bookmarks", ", m a", "Telescope marks" },
+      { "  Themes", ", t h", "Telescope themes" },
+      { "  Mappings", ", c h", "NvCheatsheet" },
     },
   },
 

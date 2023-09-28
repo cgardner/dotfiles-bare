@@ -10,7 +10,7 @@ M.general = {
   n = {
     ["<leader> a"] = { "ggvg", "Select All", opts = { silent = true } },
 
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    [";"] = { ":", "Enter command mode", opts = { nowait = true } },
     ["h"] = { "k", "Move up" },
     ["j"] = { "h", "Move right" },
     ["k"] = { "j", "Move down" },
@@ -21,7 +21,7 @@ M.general = {
     ["<C-j>"] = { "<C-w>h", "Window down" },
   },
   v = {
-    [">"] = { ">gv", "indent" },
+    [">"] = { ">gv", "Indent" },
     ["h"] = { "k", "Move up" },
     ["j"] = { "h", "Move right" },
     ["l"] = { "l", "Move left" },
@@ -40,6 +40,12 @@ M.configs = {
     ["<leader>ev"] = { ":edit $MYVIMRC<CR>", "Edit vim config", opts = { silent = true } },
     ["<leader>sv"] = { ":source $MYVIMRC<CR>", "Reload vim config", opts = { silent = true } },
   },
+}
+
+M.lspconfig = {
+  n = {
+    ["C-K"] = {"K", "vim.lspconfig.hover()"}
+  }
 }
 
 -- more keybinds!
