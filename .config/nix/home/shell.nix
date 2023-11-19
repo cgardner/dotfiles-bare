@@ -26,6 +26,7 @@
           "$memory_usage"
           "$time"
           "$nix_shell"
+          "$battery"
           "$line_break"
         ];
         git_branch.symbol = " ";
@@ -33,6 +34,26 @@
         time = {
           format = " [$time]($style)";
           disabled = false;
+        };
+        username = {
+          format = "[$user@]($style)";
+          show_always = true;
+        };
+        hostname = {
+          ssh_only = false;
+        };
+
+        battery = {
+          disabled = true;
+          full_symbol = "🔋";
+          charging_symbol = "⚡️";
+          discharging_symbol = "💀";
+        };
+
+        git_status = {
+          ahead = "⇡\${count}";
+          diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
+          behind = "⇣\${count}";
         };
       };
     };
@@ -74,8 +95,6 @@
       enableCompletion = true;
       envExtra = 
         '' 
-          PATH="$PATH:/opt/homebrew/bin"
-
           clone() {
             REPO_URL=$1
             REPO_BASE=$(basename $REPO_URL)
@@ -83,9 +102,8 @@
             pushd $HOME/src
             git clone $REPO_URL
             popd
-            tmuxinator start project $HOME/src/$REPO_PATH
+            ${pkgs.tmuxinator} start project $HOME/src/$REPO_PATH
           }
-          
         '';
       history.extended = true;
       shellAliases = {
