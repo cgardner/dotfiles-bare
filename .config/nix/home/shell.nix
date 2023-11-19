@@ -107,6 +107,7 @@
         '';
       history.extended = true;
       shellAliases = {
+        "cat" = "${pkgs.bat}/bin/bat";
         "muxs" = "${pkgs.tmuxinator}/bin/tmuxinator start";
         "p" = "${pkgs.tmuxinator}/bin/tmuxinator start project";
         ",gp" = "gopass show -c ";

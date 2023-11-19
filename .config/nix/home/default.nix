@@ -45,8 +45,10 @@
   # plain files is through 'home.file'.
   # home.file = import ./files.nix;
   home.file = {
-    ".config/tmuxinator".source = ./tmuxinator;
-    ".config/nvim".source = ./nvim;
+    ".config/tmuxinator".source = ./files/tmuxinator;
+    ".config/nvim".source = ./files/nvim;
+    "Library/Application Support/espanso".source = ./files/espanso;
+    ".config/bat".source = ./files/bat;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
