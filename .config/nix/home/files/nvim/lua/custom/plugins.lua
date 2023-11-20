@@ -58,9 +58,17 @@ local plugins = {
   },
 
   {
-    "github/copilot.vim",
-    lazy = false,
-  }
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = {
+          auto_trigger = true
+        }
+      }
+    end,
+  },
 
   -- To make a plugin not be loaded
   -- {
