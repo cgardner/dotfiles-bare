@@ -8,7 +8,7 @@
       b = "branch";
       ci = "commit -v";
       co = "checkout";
-      st = "status -sbuno";
+      st = "status -sb";
       unassume = "update-index --no-assume-unchanged";
       conflicted = "diff --name-only --diff-filter=U";
     };
