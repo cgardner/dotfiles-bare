@@ -10,9 +10,6 @@ local sources = {
   -- Lua
   b.formatting.stylua,
 
-  -- cpp
-  b.formatting.clang_format,
-
   -- php
   b.formatting.phpcsfixer,
 }
