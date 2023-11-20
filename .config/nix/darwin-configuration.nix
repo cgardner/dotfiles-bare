@@ -10,7 +10,7 @@ in {
       fd
       git
       direnv
-      espanso
+      # espanso
       gnupg
       gopass
       gopass-jsonapi
@@ -21,6 +21,7 @@ in {
       tmuxinator
       zoxide
       zsh
+      zsh-vi-mode
     ];
 
   environment.darwinConfig = "$HOME/.config/nix/darwin-configuration.nix";
