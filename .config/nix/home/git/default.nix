@@ -10,6 +10,7 @@
       co = "checkout";
       st = "status -sbuno";
       unassume = "update-index --no-assume-unchanged";
+      conflicted = "diff --name-only --diff-filter=U";
     };
 
     enable = true;
