@@ -11,7 +11,11 @@ local sources = {
   b.formatting.stylua,
 
   -- php
-  b.formatting.phpcsfixer,
+  b.formatting.phpcsfixer.with {
+    args = {
+      "--no-interaction", "--quiet", "fix", "$FILENAME", "--config", "./tools/php-cs-fixer/.php-cs-fixer.dist.php"
+    },
+  },
 }
 
 null_ls.setup {
