@@ -9,6 +9,7 @@
       enable = true;
       enableZshIntegration = true;
       settings = {
+        continuation_prompt = "▶▶ ";
         add_newline = true;
         format = lib.concatStrings [
           "$username"
@@ -106,6 +107,9 @@
           }
         '';
       history.extended = true;
+      initExtra = ''
+        source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+      '';
       shellAliases = {
         "cat" = "${pkgs.bat}/bin/bat";
         "muxs" = "${pkgs.tmuxinator}/bin/tmuxinator start";
