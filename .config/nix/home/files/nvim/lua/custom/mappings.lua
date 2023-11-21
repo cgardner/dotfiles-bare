@@ -44,8 +44,8 @@ M.configs = {
 
 M.lspconfig = {
   n = {
-    ["C-K"] = {"K", "vim.lspconfig.hover()"}
-  }
+    ["C-K"] = { "K", "vim.lspconfig.hover()" },
+  },
 }
 
 -- more keybinds!
