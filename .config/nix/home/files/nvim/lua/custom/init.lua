@@ -7,3 +7,7 @@ local g = vim.g
 --   command = "tabdo wincmd =",
 -- })
 g.mapleader = ","
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.cmd([[ set nofoldenable ]])
