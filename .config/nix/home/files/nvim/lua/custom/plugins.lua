@@ -70,6 +70,11 @@ local plugins = {
     end,
   },
 
+  {
+    "direnv/direnv.vim",
+    lazy = false,
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",
