@@ -105,6 +105,8 @@
             popd
             ${pkgs.tmuxinator} start project $HOME/src/$REPO_PATH
           }
+
+          eval "$(direnv hook zsh)"
         '';
       history.extended = true;
       initExtra = ''

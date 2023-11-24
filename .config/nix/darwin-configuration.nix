@@ -15,6 +15,7 @@ in {
       gopass
       gopass-jsonapi
       neovim
+      nix-direnv
       ripgrep
       starship
       tmux

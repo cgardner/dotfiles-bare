@@ -64,10 +64,15 @@ local plugins = {
     config = function()
       require("copilot").setup {
         suggestion = {
-          auto_trigger = true
-        }
+          auto_trigger = true,
+        },
       }
     end,
+  },
+
+  {
+    "direnv/direnv.vim",
+    lazy = false,
   },
 
   -- To make a plugin not be loaded
