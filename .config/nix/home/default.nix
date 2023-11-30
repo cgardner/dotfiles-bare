@@ -10,6 +10,8 @@
   home.username = "craiggardner";
   home.homeDirectory = "/Users/craiggardner";
 
+  home.keyboard.layout = "colemak";
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
@@ -44,11 +46,26 @@
   # plain files is through 'home.file'.
   # home.file = import ./files.nix;
   home.file = {
-    ".config/tmuxinator".source = ./files/tmuxinator;
-    ".config/nvim".source = ./files/nvim;
-    "Library/Application Support/espanso".source = ./files/espanso;
-    ".config/bat".source = ./files/bat;
-    ".config/wezterm".source = ./files/wezterm;
+    ".config/tmuxinator" = {
+      source = ./files/tmuxinator;
+      recursive = true;
+    };
+    ".config/nvim" = {
+      source = ./files/nvim;
+      recursive = true;
+    };
+    "Library/Application Support/espanso" = {
+      source = ./files/espanso;
+      recursive = true;
+    };
+    ".config/bat" = {
+      source = ./files/bat;
+      recursive = true;
+    };
+    ".config/wezterm" = {
+      source = ./files/wezterm;
+      recursive = true;
+    };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -78,5 +95,7 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  home.enableNixpkgsReleaseCheck = false;
 }
 
