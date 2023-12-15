@@ -4,13 +4,16 @@ in {
   imports = [ <home-manager/nix-darwin> ];
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
+
   environment.systemPackages = with pkgs; [
       bat
+      curl
       eza
       fd
       git
       direnv
-      # espanso
+      dbeaver
+      # espanso # Install manually for now
       gnupg
       gopass
       gopass-jsonapi
@@ -18,6 +21,7 @@ in {
       nix-direnv
       ripgrep
       starship
+      todoist
       tmux
       tmuxinator
       zoxide

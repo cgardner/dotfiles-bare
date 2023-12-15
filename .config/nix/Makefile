@@ -1,14 +1,20 @@
-
 .DEFAULT_GOAL := check
 
 .PHONY: check
-check:
-	darwin-rebuild check -I "darwin-config=./darwin-configuration.nix"
-
+check: 
+	darwin-rebuild check -I "darwin-config=./darwin-configuration.nix" 
 
 .PHONY: switch
-switch: check
-	darwin-rebuild switch -I "darwin-config=./darwin-configuration.nix"
+switch: COMMAND = switch
+switch: exec
+
+.PHONY: build
+build: COMMAND = build
+build: exec
+
+
+exec: check
+	darwin-rebuild ${COMMAND} -I "darwin-config=./darwin-configuration.nix" 
 
 .PHONY: clean
 clean:
@@ -17,6 +23,7 @@ clean:
 .PHONY: install-nix
 install-nix:
 	@curl -L https://nixos.org/nix/install | sh -s -- --daemon
+
 .PHONY: install
 install: install-nix switch
 

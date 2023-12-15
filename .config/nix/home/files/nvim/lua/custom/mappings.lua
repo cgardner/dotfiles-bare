@@ -19,6 +19,8 @@ M.general = {
     ["<C-h>"] = { "<C-w>k", "Window left" },
     ["<C-l>"] = { "<C-w>l", "Window right" },
     ["<C-j>"] = { "<C-w>h", "Window down" },
+    ["<leader> space n"] = { ":bnext<CR>", "Next Buffer" },
+    ["<leader> space p"] = { ":bprev<CR>", "Previous Buffer" },
   },
   v = {
     [">"] = { ">gv", "Indent" },
@@ -45,6 +47,45 @@ M.configs = {
 M.lspconfig = {
   n = {
     ["C-K"] = { "K", "vim.lspconfig.hover()" },
+  },
+}
+
+M.debugging = {
+  n = {
+    ["<leader>db"] = { ":lua require('dap').toggle_breakpoint()<CR>", "Toggle breakpoint" },
+    ["<leader>dc"] = { ":lua require('dap').continue()<CR>", "Continue" },
+    ["<leader>dr"] = { ":lua require('dap').repl.open()<CR>", "Open REPL" },
+    ["<leader>dl"] = { ":lua require('dap').run_last()<CR>", "Run last" },
+    ["<leader>ds"] = { ":lua require('dap').step_over()<CR>", "Step over" },
+    ["<leader>di"] = { ":lua require('dap').step_into()<CR>", "Step into" },
+    ["<leader>do"] = { ":lua require('dap').step_out()<CR>", "Step out" },
+    ["<leader>du"] = { ":lua require('dapui').toggle()<CR>", "Toggle UI" },
+  },
+}
+
+M.nvterm = {
+  n = {
+    ["<leader>tv"] = {
+
+      function()
+        require("nvterm.terminal").new "vertical"
+      end,
+      "New vertical term",
+    },
+    ["<leader>th"] = {
+      function()
+        require("nvterm.terminal").new "horizontal"
+      end,
+      "New horizontal term",
+    },
+  },
+}
+
+M.disabled = {
+  n = {
+    ["<leader>h"] = "",
+    ["<leader>v"] = "",
+    ["<Esc>h"] = "",
   },
 }
 

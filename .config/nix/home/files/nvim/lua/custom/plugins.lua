@@ -75,6 +75,23 @@ local plugins = {
     lazy = false,
   },
 
+  {
+    "mfussenegger/nvim-dap",
+    event = "VeryLazy",
+    dependencies = {
+      "ravenxrz/DAPInstall.nvim",
+      "nvim-telescope/telescope-dap.nvim",
+    },
+    config = function()
+      local dap_install = require "dap-install"
+      dap_install.config("php", {})
+    end,
+  },
+  {
+    "rcarriga/nvim-dap-ui",
+    after = "nvim-dap",
+  },
+
   -- To make a plugin not be loaded
   -- {
   --   "NvChad/nvim-colorizer.lua",

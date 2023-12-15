@@ -20,6 +20,7 @@
           "$golang"
           "$java"
           "$nodejs"
+          "$php"
           "$rust"
           "$character"
         ];
@@ -28,33 +29,63 @@
           "$time"
           "$nix_shell"
           "$battery"
-          "$line_break"
+          # "$line_break"
         ];
+
         git_branch.symbol = " ";
 
+        nodejs = {
+          format = "[$symbol($version)]($style) ";
+          symbol = " ";
+          version_format = "$major.$minor";
+        };
+
+        php = {
+          format = "[$symbol($version)]($style) ";
+          symbol = " ";
+          version_format = "$raw.$minor";
+        };
+
+        nix_shell = {
+          format = "[$symbol$state]($style) ";
+          symbol = "❄️ ";
+          pure_msg = "💠";
+          impure_msg = "🚯";
+        };
+
         time = {
-          format = " [$time]($style)";
+          format = "[$time]($style) ";
           disabled = false;
         };
+
         username = {
           format = "[$user@]($style)";
           show_always = true;
         };
+
         hostname = {
           ssh_only = false;
         };
 
         battery = {
-          disabled = true;
+          disabled = false;
           full_symbol = "🔋";
           charging_symbol = "⚡️";
           discharging_symbol = "💀";
+          display = {
+            threshold = 90;
+          };
         };
 
         git_status = {
           ahead = "⇡\${count}";
           diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
           behind = "⇣\${count}";
+        };
+
+        memory_usage = {
+          format = "$symbol [$ram( \| $swap)]($style) ";
+          symbol = "🐏 ";
         };
       };
     };
@@ -75,14 +106,15 @@
         bind j select-pane -L
         unbind l
         bind l select-pane -R
-        
-        # New Window
-        unbind "
-        unbind %
-        bind " split-window -c "#{pane_current_path}"
-        bind v split-window -h -c "#{pane_current_path}"
-        bind c new-window -c "#{pane_current_path}"
+
+        set-option -sa terminal-features ',xterm-256-colors:RGB'
       '';
+      plugins = [
+        {
+          plugin = pkgs.tmuxPlugins.gruvbox;
+          extraConfig = "set -g @tmux-gruvbox 'dark'";
+        }
+      ];
     };
 
     zoxide = {
@@ -121,6 +153,10 @@
         "ls" = "eza --long --git";
         "tree" = "eza --tree";
         ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
+        ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
+      };
+      sessionVariables = {
+        TODOIST_API_KEY = "$(${pkgs.gopass}/bin/gopass show -o websites/todoist.com/api_token)";
       };
     };
   };
