@@ -37,6 +37,12 @@ M.general = {
   },
 }
 
+M.aerial = {
+  n = {
+    ["<leader>a"] = { ":AerialToggle left<CR>", "Toggle Outline" },
+  },
+}
+
 M.configs = {
   n = {
     ["<leader>ev"] = { ":edit $MYVIMRC<CR>", "Edit vim config", opts = { silent = true } },
@@ -64,6 +70,7 @@ M.debugging = {
 }
 
 M.nvterm = {
+  plugin = true,
   n = {
     ["<leader>tv"] = {
 
@@ -78,6 +85,10 @@ M.nvterm = {
       end,
       "New horizontal term",
     },
+    ["<M-h>"] = { "" },
+    ["<M-v>"] = { "" },
+    ["<Esc-h>"] = { "" },
+    ["<Esc-v>"] = { "" },
   },
 }
 
@@ -85,7 +96,20 @@ M.disabled = {
   n = {
     ["<leader>h"] = "",
     ["<leader>v"] = "",
+    ["<M-h>"] = "",
+    ["<M-v>"] = "",
+    ["<Esc-h>"] = "",
+    ["<Esc-v>"] = "",
     ["<Esc>h"] = "",
+    ["<Esc>v"] = "",
+  },
+  t = {
+    ["<M-h>"] = "",
+    ["<M-v>"] = "",
+    ["<Esc-h>"] = "",
+    ["<Esc-v>"] = "",
+    ["<Esc>h"] = "",
+    ["<Esc>v"] = "",
   },
 }
 

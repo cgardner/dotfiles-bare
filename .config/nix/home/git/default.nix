@@ -11,6 +11,7 @@
       st = "status -sb";
       unassume = "update-index --no-assume-unchanged";
       conflicted = "diff --name-only --diff-filter=U";
+      today = "log --since=\"1 am\" --author=\"Craig Gardner\" --pretty=format:\"%h (%ar) - %s\" --no-merges";
     };
 
     enable = true;

@@ -1,0 +1,30 @@
+snippet test Create a test
+	/**
+	 * ${1: Test Description}
+	 *
+	 * @return void
+	 */
+	public function test${2:Name}() {
+			$0
+	}
+
+snippet dataprovider Create a Data Provider for a test
+	/**
+	 * Data Provider for ${1: Test Name}
+	 *
+	 * @return array
+	 */
+	public function ${2:Name}() {
+			return [
+					"${3:Dataset Name}" => [
+							${4:Dataset}
+					]
+			];
+	}
+
+snippet php
+	<?php declare(strict_types=1);
+
+	namespace ${1:Namespace};
+
+	$0

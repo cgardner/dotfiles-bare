@@ -20,6 +20,7 @@ local default_plugins = {
 
   {
     "NvChad/nvterm",
+    disable = true,
     init = function()
       require("core.utils").load_mappings "nvterm"
     end,

@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 let mainUser = "craiggardner";
 in {
-  imports = [ <home-manager/nix-darwin> ];
+  imports = [ 
+    <home-manager/nix-darwin>
+    ./services
+  ];
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
 

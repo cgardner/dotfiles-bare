@@ -1,7 +1,7 @@
-# /Users/gardnerc/.tmuxinator/tasks.yml
+# $HOME/.config/tmuxinator/notes.yml
 
-name: tasks
-root: ~/
+name: notes
+root: ~/Documents/Second Brain
 
 # Optional tmux socket
 # socket_name: foo
@@ -10,16 +10,19 @@ root: ~/
 # project hooks.
 
 # Project hooks
+
 # Runs on project start, always
 # on_project_start: command
-on_project_start: docker run -d --rm --name=plantuml -p 8080:8080 plantuml/plantuml-server
+
 # Run on project start, the first time
 # on_project_first_start: command
+
 # Run on project start, after the first time
 # on_project_restart: command
+
 # Run on project exit ( detaching from tmux session )
 # on_project_exit: command
-on_project_exit: docker kill plantuml
+
 # Run on project stop
 # on_project_stop: command
 
@@ -42,12 +45,7 @@ on_project_exit: docker kill plantuml
 # attach: false
 
 windows:
-  - tasks:
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
+  - editor:
       panes:
-        - dstask
+        - nvim
   - terminal:
-      panes:
-        - 

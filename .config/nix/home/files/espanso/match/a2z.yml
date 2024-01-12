@@ -1,0 +1,9 @@
+matches:
+  - trigger: ",aem"
+    replace: "craig.gardner@a2zsync.com"
+  - trigger: ",lp"
+    replace: "Lending Platform"
+  - trigger: ",a2z"
+    replace: "A2Z Sync"
+  - trigger: ",los"
+    replace: "Loan Origination System"

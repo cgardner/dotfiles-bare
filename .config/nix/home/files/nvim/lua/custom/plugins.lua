@@ -2,8 +2,53 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-
   -- Override plugin definition options
+  {
+    "hrsh7th/nvim-cmp",
+    opts = {
+      completion = {
+        autocomplete = false,
+      },
+    },
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    event = {
+      "BufReadPre " .. vim.fn.expand "~" .. "/Documents/Second Brain",
+      "BufNewFile " .. vim.fn.expand "~" .. "/Documents/Second Brain",
+    },
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    opts = require "custom.configs.obsidian",
+  },
+  {
+    "stevearc/aerial.nvim",
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+    event = "BufRead",
+    config = function()
+      require "custom.configs.aerial"
+    end,
+  },
+
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    event = "BufRead",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 
   {
     "neovim/nvim-lspconfig",
