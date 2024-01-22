@@ -3,7 +3,6 @@ let mainUser = "craiggardner";
 in {
   imports = [ 
     <home-manager/nix-darwin>
-    ./services
   ];
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -17,6 +16,7 @@ in {
       direnv
       dbeaver
       # espanso # Install manually for now
+      gnumake
       gnupg
       gopass
       gopass-jsonapi

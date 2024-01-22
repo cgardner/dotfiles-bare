@@ -154,6 +154,7 @@
         "tree" = "eza --tree";
         ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
         ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
+        "m" = "${pkgs.gnumake}/bin/make";
       };
       sessionVariables = {
         TODOIST_API_KEY = "$(${pkgs.gopass}/bin/gopass show -o websites/todoist.com/api_token)";
