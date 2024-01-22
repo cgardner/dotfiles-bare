@@ -3,6 +3,8 @@ matches:
     replace: "craig.s.gardner@proton.me"
   - trigger: "mailbrew"
     replace: "cgardner@inbox.mailbrew.com"
+  - trigger: ",gm"
+    replace: "craig.s.gardner@gmail.com"
   - trigger: ",pn"
     replace: "619-330-5602"
   - trigger: ",li"
