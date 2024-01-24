@@ -1,0 +1,3 @@
+matches:
+  - trigger: ",rm"
+    replace: "cgardner@rootstock.com"
