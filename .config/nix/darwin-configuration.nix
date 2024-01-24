@@ -15,6 +15,7 @@ in {
       git
       direnv
       dbeaver
+      fira-code-nerdfont
       # espanso # Install manually for now
       gnumake
       gnupg
