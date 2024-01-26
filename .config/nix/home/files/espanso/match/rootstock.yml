@@ -1,3 +1,7 @@
 matches:
   - trigger: ",rm"
     replace: "cgardner@rootstock.com"
+  - trigger: ",rs"
+    replace: "Rootstock"
+  - trigger: ",sf"
+    replace: "Salesforce"
