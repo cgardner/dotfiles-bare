@@ -23,8 +23,11 @@ in {
       gopass-jsonapi
       neovim
       nix-direnv
+      procs
+      pmd
       ripgrep
       starship
+      temurin-bin-17
       todoist
       tmux
       tmuxinator
