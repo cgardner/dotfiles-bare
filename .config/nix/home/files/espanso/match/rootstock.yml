@@ -5,3 +5,5 @@ matches:
     replace: "Rootstock"
   - trigger: ",sf"
     replace: "Salesforce"
+  - trigger: ",org"
+    replace: "Organization"
