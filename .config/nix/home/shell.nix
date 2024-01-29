@@ -139,6 +139,7 @@
           }
 
           eval "$(direnv hook zsh)"
+          eval "$(zoxide init zsh)"
         '';
       history.extended = true;
       initExtra = ''
@@ -155,6 +156,7 @@
         ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
         ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
         "m" = "${pkgs.gnumake}/bin/make";
+        "cd" = "z";
       };
       sessionVariables = {
         TODOIST_API_KEY = "$(${pkgs.gopass}/bin/gopass show -o websites/todoist.com/api_token)";
