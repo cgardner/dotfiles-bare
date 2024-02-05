@@ -40,5 +40,5 @@ root: ~/src/<%= @args[0] %>
 # attach: false
 
 windows:
-  - editor: $EDITOR ~/src/<%= @args[0] %>
+  - editor: nix-shell --run nvim .custom/editor.nix
   - terminal:
