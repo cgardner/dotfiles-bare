@@ -9,24 +9,30 @@ in {
 
   environment.systemPackages = with pkgs; [
       bat
+      cargo
       curl
       eza
       fd
       git
       direnv
       dbeaver
+      docker
       fira-code-nerdfont
+      fzf
       # espanso # Install manually for now
       gnumake
       gnupg
+      go
       gopass
       gopass-jsonapi
       neovim
       nix-direnv
+      nodejs
       procs
       pmd
       ripgrep
       starship
+      # temurin-jre-bin
       temurin-bin-17
       todoist
       tmux

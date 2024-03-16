@@ -47,5 +47,5 @@ root: ~/.config/nix
 windows:
   - editor:
       panes:
-        - nvim
+        - nix-shell --run '<%= ENV["EDITOR"] %>'.custom/editor.nix || <%= ENV["EDITOR"] %>
   - terminal:
