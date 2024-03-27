@@ -9,14 +9,14 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      servers = {
-        apex_ls = {
+      apex_ls = {
+        servers = {
           cmd = {
             "java",
             "-jar",
             vim.env.HOME .. "/.local/share/nvim/mason/share/apex-language-server/apex-jorje-lsp.jar",
           },
-          filetypes = { "apex", "cls", "trigger" },
+          filetypes = { "apexcode", "apex", "cls", "trigger" },
           root_dir = require("lspconfig").util.root_pattern("sfdx-project.json"),
         },
       },
@@ -36,6 +36,7 @@ return {
         },
         ---@type table<string, conform.FormatterUnit[]>
         formatters_by_ft = {
+          apexcode = { "prettier" },
           apex = { "prettier" },
           lua = { "stylua" },
           sh = { "shfmt" },
