@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 {
   programs = {
     bat = {
@@ -95,8 +95,8 @@
       shortcut = "a";
       tmuxinator.enable = true;
       keyMode = "vi";
-      extraConfig = 
-      '' 
+      extraConfig =
+        '' 
         # Pane Movement
         unbind Up
         bind h select-pane -U
@@ -126,7 +126,7 @@
       enable = true;
       enableAutosuggestions = true;
       enableCompletion = true;
-      envExtra = 
+      envExtra =
         '' 
           clone() {
             REPO_URL=$1
@@ -135,7 +135,7 @@
             pushd $HOME/src
             git clone $REPO_URL
             popd
-            ${pkgs.tmuxinator} start project $HOME/src/$REPO_PATH
+            ${pkgs.tmuxinator}/bin/tmuxinator start project $HOME/src/$REPO_PATH
           }
 
           eval "$(direnv hook zsh)"
