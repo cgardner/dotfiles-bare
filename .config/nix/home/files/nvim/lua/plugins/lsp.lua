@@ -1,25 +1,8 @@
-local Util = require("lazy.util")
 return {
   {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = { "rnix-lsp", "apex-language-server", "stylua" },
-    },
-  },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      apex_ls = {
-        servers = {
-          cmd = {
-            "java",
-            "-jar",
-            vim.env.HOME .. "/.local/share/nvim/mason/share/apex-language-server/apex-jorje-lsp.jar",
-          },
-          filetypes = { "apexcode", "apex", "cls", "trigger" },
-          root_dir = require("lspconfig").util.root_pattern("sfdx-project.json"),
-        },
-      },
     },
   },
   {
