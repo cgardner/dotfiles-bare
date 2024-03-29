@@ -2,7 +2,7 @@ return {
   {
     "williamboman/mason.nvim",
     opts = {
-      ensure_installed = { "rnix-lsp", "apex-language-server", "stylua" },
+      ensure_installed = { "rnix-lsp", "stylua" },
     },
   },
   {
