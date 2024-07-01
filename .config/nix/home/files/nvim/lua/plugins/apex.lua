@@ -4,6 +4,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   callback = function()
     vim.bo.ft = "apex"
     vim.bo.commentstring = "// %s"
+
+    vim.cmd([[set syntax=apex]])
+    vim.cmd([[syn region foldBraces start=/{/ end=/}/ transparent fold keepend extend]])
+    vim.cmd([[syn region foldJavadoc start=+/\*+ end=+\*/+ transparent fold keepend extend]])
+    vim.cmd([[syn region foldDML start=+\[+ end=+\]+ transparent fold keepend extend ]])
+
+    vim.opt.foldmethod = "syntax"
   end,
   group = apex,
 })

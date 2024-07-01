@@ -1,4 +1,4 @@
-{configs, pkgs, ...}:
+{ configs, pkgs, ... }:
 {
   programs.git = {
 
@@ -13,16 +13,17 @@
       conflicted = "diff --name-only --diff-filter=U";
       today = "log --since=\"1 am\" --author=\"Craig Gardner\" --pretty=format:\"%h (%ar) - %s\" --no-merges";
       lol = "log --oneline --graph --tags";
+      top10 = "! git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10";
     };
 
     enable = true;
 
-    hooks = {
-    };
+    hooks = { };
 
     ignores = [
       ".DS_Store"
       "*.swp"
+      ".custom/"
     ];
 
     userName = "Craig Gardner";

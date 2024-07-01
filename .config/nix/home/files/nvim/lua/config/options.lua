@@ -5,3 +5,8 @@
 vim.filetype.add({
   cls = "apex",
 })
+
+vim.opt.scrolloff = 999
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.colorcolumn = "150"

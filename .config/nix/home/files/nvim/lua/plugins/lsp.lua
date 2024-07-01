@@ -4,6 +4,9 @@ return {
     opts = {
       ensure_installed = { "rnix-lsp", "stylua" },
     },
+    keys = {
+      { "<leader>m", "<cmd>Mason<CR>", desc = "Mason" },
+    },
   },
   {
     "stevearc/conform.nvim",
@@ -23,6 +26,7 @@ return {
           apex = { "prettier" },
           lua = { "stylua" },
           sh = { "shfmt" },
+          go = { "gofmt", "gofumpt" },
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.

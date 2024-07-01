@@ -108,6 +108,8 @@
         bind l select-pane -R
 
         set-option -sa terminal-features ',xterm-256-colors:RGB'
+        set-option -sg escape-time 10
+        set-option -g default-terminal "screen-256color"
       '';
       plugins = [
         {
@@ -132,6 +134,7 @@
             REPO_URL=$1
             REPO_BASE=$(basename $REPO_URL)
             REPO_PATH="$\{REPO_BASE%.*\}"
+            echo $REPO_PATH
             pushd $HOME/src
             git clone $REPO_URL
             popd
@@ -149,6 +152,26 @@
         "cat" = "${pkgs.bat}/bin/bat";
         "muxs" = "${pkgs.tmuxinator}/bin/tmuxinator start";
         "p" = "${pkgs.tmuxinator}/bin/tmuxinator start project";
+        ",gp" = "${pkgs.gopass}/bin/gopass show -c ";
+        "g" = "${pkgs.git}/bin/git";
+        "ls" = "${pkgs.eza}/bin/eza --long --git";
+        "tree" = "${pkgs.eza}/bin/eza --tree";
+        ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
+        ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
+        "m" = "${pkgs.gnumake}/bin/make";
+        "cd" = "z";
+        "excel" = "open -a 'Microsoft Excel'";
+      };
+      sessionVariables = {
+        "TERM" = "screen-256color";
+      };
+    };
+    nushell = {
+      enable = true;
+      # configFile.source = ./.../config.nu;
+      shellAliases = {
+        "muxs" = "${pkgs.tmuxinator}/bin/tmuxinator start";
+        "p" = "${pkgs.tmuxinator}/bin/tmuxinator start project";
         ",gp" = "gopass show -c ";
         "g" = "git";
         "ls" = "eza --long --git";
@@ -157,9 +180,6 @@
         ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
         "m" = "${pkgs.gnumake}/bin/make";
         "cd" = "z";
-      };
-      sessionVariables = {
-        TODOIST_API_KEY = "$(${pkgs.gopass}/bin/gopass show -o websites/todoist.com/api_token)";
       };
     };
   };

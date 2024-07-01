@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ...}:
+{ config, pkgs, lib, ... }:
 {
   ".config/tmuxinator".source = ./tmuxinator;
 }

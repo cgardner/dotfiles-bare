@@ -16,17 +16,25 @@ in
     fd
     git
     direnv
-    dbeaver
     docker
+    eza
     fira-code-nerdfont
     fzf
     # espanso # Install manually for now
+    gh
     gitui
     gnumake
     gnupg
+    gnused
     go
     gopass
     gopass-jsonapi
+    heroku
+    jq
+    lazygit
+    libxml2
+    llm
+    luajitPackages.luarocks
     neovim
     nix-direnv
     nodejs
@@ -34,11 +42,13 @@ in
     procs
     ripgrep
     starship
-    # temurin-jre-bin
     temurin-bin-17
-    todoist
+    tree-sitter
     tmux
     tmuxinator
+    todoist
+    wget
+    yarn
     zoxide
     zsh
     zsh-vi-mode
@@ -60,7 +70,7 @@ in
 
   users.users.${mainUser} = {
     home = "/Users/${mainUser}";
-    shell = pkgs.zsh;
+    shell = pkgs.nushell;
   };
 
   home-manager = {
@@ -84,5 +94,4 @@ in
 
   # Don't show recent applications in the dock
   system.defaults.dock.show-recents = false;
-
 }

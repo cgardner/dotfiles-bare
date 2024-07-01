@@ -40,5 +40,7 @@ root: ~/src/<%= @args[0] %>
 # attach: false
 
 windows:
-  - editor: nix-shell --run nvim .custom/editor.nix || <%= ENV["EDITOR"] %>
+  - editor:
+      panes:
+        - nix-shell --run nvim .custom/editor.nix || <%= ENV["EDITOR"] %>
   - terminal:
