@@ -114,6 +114,7 @@
         set-option -sa terminal-features ',xterm-256-colors:RGB'
         set-option -sg escape-time 10
         set-option -g default-terminal "screen-256color"
+        set-option -g status-right "#[bg=colour237,fg=colour239 nobold, nounderscore, noitalics]#[bg=colour237,fg=colour239 nobold, nounderscore, noitalics]#[bg=colour239,fg=246]#(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD) %Y-%m-%d  %H:%M #[bg=colour239,fg=colour248,nobold,noitalics,nounderscore]#[bg=colour248,fg=colour237] #h
       '';
       plugins = [
         {
