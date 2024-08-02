@@ -5,6 +5,10 @@
       enable = true;
     };
 
+    java = {
+      enable = true;
+    };
+
     starship = {
       enable = true;
       enableZshIntegration = true;
@@ -126,7 +130,10 @@
 
     zsh = {
       enable = true;
-      enableAutosuggestions = true;
+
+      autosuggestion = {
+        enable = true;
+      };
       enableCompletion = true;
       envExtra =
         '' 
@@ -164,22 +171,7 @@
       };
       sessionVariables = {
         "TERM" = "screen-256color";
-      };
-    };
-    nushell = {
-      enable = true;
-      # configFile.source = ./.../config.nu;
-      shellAliases = {
-        "muxs" = "${pkgs.tmuxinator}/bin/tmuxinator start";
-        "p" = "${pkgs.tmuxinator}/bin/tmuxinator start project";
-        ",gp" = "gopass show -c ";
-        "g" = "git";
-        "ls" = "eza --long --git";
-        "tree" = "eza --tree";
-        ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
-        ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
-        "m" = "${pkgs.gnumake}/bin/make";
-        "cd" = "z";
+        "JAVA_HOME" = "${pkgs.temurin-bin-17}/";
       };
     };
   };
