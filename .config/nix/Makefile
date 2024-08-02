@@ -24,8 +24,14 @@ clean:
 install-nix:
 	@curl -L https://nixos.org/nix/install | sh -s -- --daemon
 
+
+.PHONY: install-nix-darwin
+install-nix-darwin:
+	nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer 
+	./result/bin/darwin-installer
+
 .PHONY: install
-install: install-nix switch
+install: install-nix install-nix-darwin switch
 
 .PHONY: update
 update:
