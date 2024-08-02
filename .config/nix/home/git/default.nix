@@ -14,6 +14,7 @@
       today = "log --since=\"1 am\" --author=\"Craig Gardner\" --pretty=format:\"%h (%ar) - %s\" --no-merges";
       lol = "log --oneline --graph --tags";
       top10 = "! git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10";
+      p = "push -u origin $(git rev-parse --abbrev-ref HEAD)";
     };
 
     enable = true;
