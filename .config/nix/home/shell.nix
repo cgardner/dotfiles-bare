@@ -162,8 +162,8 @@
         "p" = "${pkgs.tmuxinator}/bin/tmuxinator start project";
         ",gp" = "${pkgs.gopass}/bin/gopass show -c ";
         "g" = "${pkgs.git}/bin/git";
-        "ls" = "${pkgs.eza}/bin/eza --long --git";
-        "tree" = "${pkgs.eza}/bin/eza --tree";
+        "ls" = "${pkgs.eza}/bin/eza --icons --long --git";
+        "tree" = "${pkgs.eza}/bin/eza --icons --tree";
         ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
         ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
         "m" = "${pkgs.gnumake}/bin/make";
