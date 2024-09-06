@@ -45,7 +45,5 @@ root: ~/Documents/Second Brain
 # attach: false
 
 windows:
-  - editor:
-      panes:
-        - nvim
+  - editor: <%= ENV["EDITOR"] %>
   - terminal:
