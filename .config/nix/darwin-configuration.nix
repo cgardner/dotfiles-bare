@@ -8,53 +8,67 @@ in
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
 
-  environment.systemPackages = with pkgs; [
-    bat
-    cargo
-    curl
-    eza
-    fd
-    git
-    direnv
-    docker
-    eza
-    fira-code-nerdfont
-    fzf
-    # espanso # Install manually for now
-    gh
-    gitui
-    gnumake
-    gnupg
-    gnused
-    go
-    gopass
-    gopass-jsonapi
-    heroku
-    jq
-    lazygit
-    libxml2
-    llm
-    luajitPackages.luarocks
-    neovim
-    nix-direnv
-    nodejs
-    pmd
-    procs
-    ripgrep
-    starship
-    temurin-bin-17
-    tree-sitter
-    tmux
-    tmuxinator
-    todoist
-    wget
-    yarn
-    zoxide
-    zsh
-    zsh-vi-mode
-  ];
+  environment = {
+    systemPackages = with pkgs; [
+      atuin
+      bat
+      carapace
+      cargo
+      curl
+      eza
+      fd
+      git
+      direnv
+      docker
+      docker-compose
+      eza
+      fira-code-nerdfont
+      fzf
+      # espanso # Install manually for now
+      gh
+      gimp
+      gitui
+      gnumake
+      gnupg
+      gnused
+      go
+      gopass
+      gopass-jsonapi
+      heroku
+      inshellisense
+      jq
+      llm
+      lazygit
+      libxml2
+      luajitPackages.luarocks
+      neovim
+      nix-direnv
+      nodejs
+      nushell
+      ollama
+      pmd
+      procs
+      ripgrep
+      starship
+      temurin-bin-17
+      tree-sitter
+      tmux
+      tmuxinator
+      todoist
+      wget
+      yarn
+      zoxide
+      zsh
+      zsh-vi-mode
+    ];
 
-  environment.darwinConfig = "$HOME/.config/nix/darwin-configuration.nix";
+    darwinConfig = "$HOME/.config/nix/darwin-configuration.nix";
+
+    shells = [
+      pkgs.zsh
+      pkgs.nushell
+    ];
+  };
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
