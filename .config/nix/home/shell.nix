@@ -5,6 +5,21 @@
       enable = true;
     };
 
+    carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+      enableZshIntegration = true;
+    };
+
+    direnv = {
+      enable = true;
+      nix-direnv.enable = true;
+    };
+
+    eza = {
+      enable = true;
+    };
+
     java = {
       enable = true;
     };
@@ -12,6 +27,7 @@
     starship = {
       enable = true;
       enableZshIntegration = true;
+      enableNushellIntegration = true;
       settings = {
         continuation_prompt = "▶▶ ";
         add_newline = true;
@@ -127,6 +143,7 @@
     zoxide = {
       enable = true;
       enableZshIntegration = true;
+      enableNushellIntegration = true;
     };
 
     zsh = {
@@ -155,6 +172,7 @@
       history.extended = true;
       initExtra = ''
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+        source <(${pkgs.carapace}/bin/carapace __carapace)
       '';
       shellAliases = {
         "cat" = "${pkgs.bat}/bin/bat";
@@ -167,13 +185,15 @@
         ",c" = "${pkgs.git}/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME";
         ",t" = "${pkgs.todoist}/bin/todoist --header --color --indent";
         "m" = "${pkgs.gnumake}/bin/make";
-        "cd" = "z";
+        "cd" = "${pkgs.zoxide}/bin/z";
         "excel" = "open -a 'Microsoft Excel'";
       };
       sessionVariables = {
         "TERM" = "screen-256color";
         "JAVA_HOME" = "${pkgs.temurin-bin-17}/";
+        "CARAPACE_BRIDGES" = "zsh,fish,bash,inshellisense";
       };
     };
   };
 }
+

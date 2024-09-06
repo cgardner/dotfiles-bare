@@ -2,6 +2,8 @@
   imports = [
     ./git
     ./shell.nix
+    ./nushell.nix
+    ./atuin.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -63,6 +65,10 @@
     };
     ".config/wezterm" = {
       source = ./files/wezterm;
+      recursive = true;
+    };
+    ".config/nushell" = {
+      source = ./files/nushell;
       recursive = true;
     };
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
