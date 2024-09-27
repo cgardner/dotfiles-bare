@@ -30,13 +30,19 @@
           ],
         }
         $env.CARAPACE_BRIDGES = "zsh,fish,bash,inshellisense"
-        $env.PATH = ($env.PATH | split row (char esep) | append [/usr/bin/env /opt/homebrew/bin /run/current-system/sw/bin /usr/local/bin])
         (${pkgs.zoxide}/bin/zoxide init nushell | ignore)
         (${pkgs.starship}/bin/starship init nu | ignore)
         (${pkgs.carapace}/bin/carapace _carapace nushell | ignore)
 
+        $env.PATH = ($env.PATH | split row (char esep) | prepend [/run/current-system/sw/bin /usr/bin/env /opt/homebrew/bin /usr/local/bin] | uniq -i | str join (char esep))
         def _c [...args] {
           ${pkgs.git}/bin/git --git-dir=($env.HOME)/.cfg --work-tree=($env.HOME) ...$args
+        }
+
+        def clone [repository] {
+          let repo_dirname = ($repository | path parse | get stem)
+          ${pkgs.git}/bin/git clone ($repository) ([$env.HOME, 'src', $repo_dirname] | str join "/")
+          ${pkgs.tmuxinator}/bin/tmuxinator start project ($repo_dirname)
         }
       '';
       environmentVariables = {
@@ -45,13 +51,12 @@
       };
       shellAliases = {
         "cat" = "${pkgs.bat}/bin/bat";
-        "muxs" = "tmuxinator start";
-        "p" = "tmuxinator start project";
+        "muxs" = "${pkgs.tmuxinator}/bin/tmuxinator start";
+        "p" = "${pkgs.tmuxinator}/bin/tmuxinator start project";
         ",gp" = "${pkgs.gopass}/bin/gopass show -c ";
-        # "g" = "${pkgs.git}/bin/git";
+        ",g" = "${pkgs.git}/bin/git";
         "ll" = "${pkgs.eza}/bin/eza --icons --long --git";
         "tree" = "${pkgs.eza}/bin/eza --icons --tree";
-        # ",c" = "_c";
         ",c" = "${pkgs.git}/bin/git --git-dir=($env.HOME)/.cfg --work-tree=($env.HOME)";
         "m" = "${pkgs.gnumake}/bin/make";
         "cd" = "z";
