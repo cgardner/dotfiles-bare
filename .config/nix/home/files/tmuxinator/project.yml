@@ -40,5 +40,6 @@ root: ~/src/<%= @args[0] %>
 # attach: false
 
 windows:
-  - editor: <%= ENV["EDITOR"] %>
+  - editor:
+      - <%= ENV["EDITOR"] %>
   - terminal:
