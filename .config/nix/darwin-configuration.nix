@@ -32,14 +32,15 @@ in
       gnupg
       gnused
       go
+      google-java-format
       gopass
       gopass-jsonapi
       heroku
       inshellisense
       jq
-      llm
       lazygit
       libxml2
+      lua
       luajitPackages.luarocks
       neovim
       nix-direnv
@@ -49,6 +50,7 @@ in
       pmd
       procs
       ripgrep
+      ruby
       starship
       temurin-bin-17
       tree-sitter
