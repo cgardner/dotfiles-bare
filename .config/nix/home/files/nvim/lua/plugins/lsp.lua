@@ -3,6 +3,10 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = { "rnix-lsp", "stylua" },
+      registries = {
+        "github:nvim-java/mason-registry",
+        "github:mason-org/mason-registry",
+      },
     },
     keys = {
       { "<leader>m", "<cmd>Mason<CR>", desc = "Mason" },
@@ -14,7 +18,7 @@ return {
       ---@class ConformOpts
       local opts = {
         -- LazyVim will use these options when formatting with the conform.nvim formatter
-        format = {
+        default_format_opts = {
           timeout_ms = 10000,
           async = false, -- not recommended to change
           quiet = false, -- not recommended to change
@@ -24,9 +28,12 @@ return {
         formatters_by_ft = {
           apexcode = { "prettier" },
           apex = { "prettier" },
+          html = { "prettier" },
           lua = { "stylua" },
           sh = { "shfmt" },
           go = { "gofmt", "gofumpt" },
+          java = { "google-java-format", "jdtls" },
+          javascript = { "prettier", "eslint_d" },
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.
